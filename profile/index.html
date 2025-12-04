@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile - SCENO ICHIRO</title>
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+  <header>
+    <h1>Profile</h1>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/news/">News</a></li>
+        <li><a href="/works/">Works</a></li>
+        <li><a href="/profile/">Profile</a></li>
+        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/shop/">Online Shop</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="card" id="profile-container"></section>
+  </main>
+
+  <script>
+    async function loadProfile() {
+      try {
+        const res = await fetch("/data/profile.json");
+        const profile = await res.json();
+        const container = document.getElementById("profile-container");
+
+        container.innerHTML = `
+          <h2>${profile.title}</h2>
+          <div class="jp">${profile.jp}</div>
+          <div class="en">${profile.en}</div>
+        `;
+      } catch (err) {
+        console.error("Error loading profile JSON:", err);
+      }
+    }
+
+    loadProfile();
+  </script>
+</body>
+</html>
