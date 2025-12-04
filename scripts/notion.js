@@ -47,22 +47,22 @@ async function getWorks() {
 // === Profile データ取得 ===
 async function getProfile() {
   try {
+    // PROFILE_DB でデータベースをクエリ
     const response = await notion.databases.query({
       database_id: ProfilePageId,
     });
     console.log("Profile API Response:", response);  // レスポンスを表示して確認
 
-    const profiles = response.results.map((page) => {
-      const props = page.properties;
-      
-      return {
+    // レスポンスから最初のページを取得
+    const page = response.results[0];  // データベースから最初のアイテムを取得
+    const props = page.properties;
+    
+    const profile = {
         title: props.Title?.title?.[0]?.plain_text || "Untitled",
         description: props.Description?.rich_text?.[0]?.plain_text || "",
-        photo: props.Photo?.url || "No photo", // 画像URL（必要に応じて）
-      };
-    });
-    
-    await fs.outputJSON("data/profile.json", profiles, { spaces: 2 });
+    };
+
+    await fs.outputJSON("data/profile.json", profile, { spaces: 2 });
     console.log("✅ Profile data saved to data/profile.json");
   } catch (err) {
     console.error("❌ Error fetching profile:", err.message);
