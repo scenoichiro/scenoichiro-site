@@ -22,27 +22,39 @@
   </header>
 
   <main>
-    <section class="card" id="profile-container"></section>
+    <section class="profile">
+      <h2 id="profile-title">SCENO ICHIRO</h2>
+      <p id="profile-description">No description</p>
+      <!-- 追加で画像があれば表示 -->
+      <div id="profile-photo">
+        <img src="" alt="Profile photo" id="profile-photo-img" />
+      </div>
+    </section>
   </main>
 
+  <footer>
+    <p>&copy; 2025 SCENO ICHIRO</p>
+  </footer>
+
   <script>
-    async function loadProfile() {
-      try {
-        const res = await fetch("/data/profile.json");
-        const profile = await res.json();
-        const container = document.getElementById("profile-container");
+    // profile.jsonの読み込み
+    fetch('/data/profile.json')
+      .then(response => response.json())
+      .then(data => {
+        // プロフィールのデータを埋め込む
+        document.getElementById('profile-title').textContent = data.title || "SCENO ICHIRO";
+        document.getElementById('profile-description').textContent = data.description || "No description";
 
-        container.innerHTML = `
-          <h2>${profile.title}</h2>
-          <div class="jp">${profile.jp}</div>
-          <div class="en">${profile.en}</div>
-        `;
-      } catch (err) {
-        console.error("Error loading profile JSON:", err);
-      }
-    }
-
-    loadProfile();
+        // 画像URLがあれば、画像を表示
+        if (data.photo && data.photo !== "No photo") {
+          const imgElement = document.getElementById('profile-photo-img');
+          imgElement.src = data.photo;
+          imgElement.alt = "Profile photo";
+        }
+      })
+      .catch(err => {
+        console.error("Error loading profile data:", err);
+      });
   </script>
 </body>
 </html>
