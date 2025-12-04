@@ -50,6 +50,7 @@ async function getProfile() {
     const response = await notion.databases.query({
       database_id: ProfilePageId,
     });
+    console.log("Profile API Response:", response);  // レスポンスを表示して確認
 
     const profiles = response.results.map((page) => {
       const props = page.properties;
