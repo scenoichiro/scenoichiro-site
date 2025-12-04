@@ -51,24 +51,16 @@ async function getProfile() {
     const response = await notion.databases.query({
       database_id: ProfilePageId,
     });
-    console.log("Profile API Response:", response);  // レスポンスを表示して確認
 
-    // レスポンスから最初のページを取得
-    if (response.results.length === 0) {
-      console.log("❌ No pages found in the database.");
-      process.exit(1);
-    }
-
-    const page = response.results[0];  // データベースから最初のアイテムを取得
+    const page = response.results[0]; // 最初のページ
     const props = page.properties;
 
-    // プロパティをログに出力して確認
     console.log("Page Properties:", props);
 
-    
     const profile = {
-        title: props.Title?.title?.[0]?.plain_text || "Untitled",
-        description: props.Description?.rich_text?.[0]?.plain_text || "",
+      title: props.Title?.title?.[0]?.plain_text || "SCENO ICHIRO",
+      description: props.Description?.rich_text?.[0]?.plain_text || "",
+      photo: props.Photo?.url || ""
     };
 
     await fs.outputJSON("data/profile.json", profile, { spaces: 2 });
