@@ -5,8 +5,9 @@ const notion = new Client({
   auth: process.env.NOTION_TOKEN,
 });
 
+// 各種データベースIDを指定
 const databaseId = process.env.WORKS_DB;
-const profilePageId = process.env.PROFILE_PAGE;
+const profilePageId = process.env.PROFILE_DB;
 
 // === Works データ取得 ===
 async function getWorks() {
@@ -46,17 +47,21 @@ async function getWorks() {
 // === Profile データ取得 ===
 async function getProfile() {
   try {
-    const response = await notion.pages.retrieve({ page_id: profilePageId });
-    const props = response.properties;
+    const response = await notion.databases.query({
+      database_id: profileDatabaseId,
+    });
 
-    // プロパティ名はNotionで設定したものと一致する必要があります
-    const profile = {
-      title: props.Name?.title?.[0]?.plain_text || "SCENO ICHIRO",  // ページタイトル
-      description: props.Description?.rich_text?.[0]?.plain_text || "No description",  // 自己紹介
-      // 必要に応じて他のプロパティを追加
-    };
-    
-    await fs.outputJSON("data/profile.json", profile, { spaces: 2 });
+    const profiles = response.results.map((page) => {
+      const props = page.properties;
+      
+      return {
+        name: props.Name?.title?.[0]?.plain_text || "SCENO ICHIRO",
+        description: props.Description?.rich_text?.[0]?.plain_text || "No description",
+        photo: props.Photo?.url || "No photo", // 画像URL（必要に応じて）
+      };
+    });
+
+    await fs.outputJSON("data/profile.json", profiles, { spaces: 2 });
     console.log("✅ Profile data saved to data/profile.json");
   } catch (err) {
     console.error("❌ Error fetching profile:", err.message);
