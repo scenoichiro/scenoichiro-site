@@ -31,7 +31,10 @@ jobs:
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git checkout main
+
+          git fetch origin main
+          git merge origin/main --no-edit || true
+
           git add data/works.json
           git diff --cached --quiet || git commit -m "Auto update from Notion"
           git push origin main
