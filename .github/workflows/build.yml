@@ -25,7 +25,7 @@ jobs:
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           WORKS_DB: ${{ secrets.WORKS_DB }}
-          PROFILE_PAGE: ${{ secrets.PROFILE_PAGE }}
+          PROFILE_DB: ${{ secrets.PROFILE_DB }}
         run: node scripts/notion.js
 
       - name: Commit data
