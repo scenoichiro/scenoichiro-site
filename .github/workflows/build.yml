@@ -36,6 +36,6 @@ jobs:
           git fetch origin main
           git merge origin/main --no-edit || true
 
-          git add data/works.json
+          git add data/works.json data/profile.json
           git diff --cached --quiet || git commit -m "Auto update from Notion"
           git push origin main
