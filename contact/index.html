@@ -23,25 +23,15 @@
 
   <main>
     <section class="card">
-      <h2>お問い合わせ</h2>
-      <p>以下のフォームまたはメールアドレスからお問い合わせください。</p>
-
-      <!-- メールリンク -->
-      <p>Email: <a href="mailto:example@scenoichiro.com">example@scenoichiro.com</a></p>
-
-      <!-- 簡易フォーム（静的HTML） -->
-      <form action="https://formspree.io/f/yourformid" method="POST">
-        <label for="name">お名前</label><br>
-        <input type="text" id="name" name="name" required><br><br>
-
-        <label for="email">メールアドレス</label><br>
-        <input type="email" id="email" name="_replyto" required><br><br>
-
-        <label for="message">メッセージ</label><br>
-        <textarea id="message" name="message" rows="6" required></textarea><br><br>
-
-        <button type="submit">送信</button>
-      </form>
+      <h2>お問い合わせフォーム</h2>
+      <p>以下のからお問い合わせください。</p>
+      <script src="https://sdk.form.run/js/v2/embed.js"></script>
+      <div
+        class="formrun-embed"
+        data-formrun-form="@sceno-inquiry"
+        data-formrun-redirect="true"
+      >
+      </div>
     </section>
   </main>
 
