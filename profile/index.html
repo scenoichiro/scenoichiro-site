@@ -7,38 +7,62 @@
   <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
-  <h1>Profile</h1>
-  <div id="items-container"></div>
+  <header>
+    <h1>Profile</h1>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/news/">News</a></li>
+        <li><a href="/works/">Works</a></li>
+        <li><a href="/profile/">Profile</a></li>
+        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/shop/">Online Shop</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="profile-card">
+      <h2>SCENO ICHIRO</h2>
+      
+      <!-- プロフィール画像 -->
+      <div class="profile-photo">
+        <img src="" alt="SCENO ICHIRO" id="profile-photo" />
+      </div>
+
+      <!-- プロフィール詳細 -->
+      <div class="profile-description">
+        <p id="profile-description">Loading...</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 SCENO ICHIRO</p>
+  </footer>
 
   <script>
-    async function loadItems(jsonPath) {
-      try {
-        const res = await fetch(jsonPath); // e.g., "../data/works.json"
-        const items = await res.json();
+    // profile.json を読み込んで表示
+    fetch('/data/profile.json')
+      .then(response => response.json())
+      .then(data => {
+        // プロフィールタイトル
+        document.querySelector('h2').textContent = data.title;
+        
+        // プロフィール画像
+        const profilePhoto = document.getElementById('profile-photo');
+        if (data.photo) {
+          profilePhoto.src = data.photo;
+        } else {
+          profilePhoto.alt = "No image available";
+        }
 
-        const container = document.getElementById("items-container");
-
-        items.forEach(item => {
-          const div = document.createElement("div");
-          div.className = "card";
-
-          div.innerHTML = `
-            <div class="title">${item.title}</div>
-            <div class="description">${item.description || ""}</div>
-          `;
-          container.appendChild(div);
-        });
-      } catch (err) {
-        console.error("Error loading JSON:", err);
-      }
-    }
-
-    // ページごとに JSON ファイルを指定
-    // Works ページ: "../data/works.json"
-    // News ページ: "../data/news.json"
-    // Discography ページ: "../data/discography.json"
-    // Schedule ページ: "../data/schedule.json"
-    loadItems("../data/profile.json");
+        // プロフィールの詳細
+        document.getElementById('profile-description').textContent = data.description || "No description available.";
+      })
+      .catch(err => {
+        console.error("❌ Error loading profile data:", err);
+      });
   </script>
 </body>
 </html>
