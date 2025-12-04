@@ -18,8 +18,8 @@ jobs:
         with:
           node-version: 18
 
-      - name: Install dependencies
-        run: npm install
+      - name: Install
+        run: npm install @notionhq/client
 
       - name: Fetch Notion Data
         env:
