@@ -52,7 +52,7 @@ async function getProfile() {
       database_id: ProfilePageId,
     });
 
-    const page = response.results.map((page) => {
+    const profile = response.results.map((page) => {
       const props = page.properties;
 
       return {
