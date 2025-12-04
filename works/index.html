@@ -4,84 +4,46 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Works - SCENO ICHIRO</title>
-  <style>
-    body {
-      font-family: "Helvetica Neue", Arial, sans-serif;
-      background: #fefefe;
-      color: #222;
-      margin: 40px;
-      line-height: 1.6;
-    }
-    h1 {
-      font-size: 2em;
-      margin-bottom: 1em;
-    }
-    .work {
-      border-bottom: 1px solid #ccc;
-      padding: 20px 0;
-    }
-    .work:last-child {
-      border-bottom: none;
-    }
-    .title {
-      font-weight: bold;
-      font-size: 1.2em;
-      margin-bottom: 0.3em;
-    }
-    .role, .date {
-      font-size: 0.9em;
-      color: #666;
-      margin-right: 10px;
-    }
-    .description {
-      margin-top: 0.5em;
-      white-space: pre-wrap;
-    }
-    a {
-      color: #0077cc;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
+  <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
   <h1>Works</h1>
-  <div id="works-container">
-    <!-- ここに作品リストが入ります -->
-  </div>
+  <div id="items-container"></div>
 
   <script>
-    async function loadWorks() {
+    async function loadItems(jsonPath) {
       try {
-        const res = await fetch("../data/works.json"); // 相対パスは /works/index.html から見た data/works.json
-        const works = await res.json();
+        const res = await fetch(jsonPath); // e.g., "../data/works.json"
+        const items = await res.json();
 
-        const container = document.getElementById("works-container");
+        const container = document.getElementById("items-container");
 
-        works.forEach(work => {
+        items.forEach(item => {
           const div = document.createElement("div");
-          div.className = "work";
+          div.className = "card";
 
           div.innerHTML = `
-            <div class="title">${work.title}</div>
+            <div class="title">${item.title}</div>
             <div>
-              <span class="role">${work.role}</span>
-              <span class="date">${work.date}</span>
+              <span class="role">${item.role || ""}</span>
+              <span class="date">${item.date || ""}</span>
             </div>
-            <div class="description">${work.description}</div>
-            ${work.link ? `<div><a href="${work.link}" target="_blank">Link</a></div>` : ""}
+            <div class="description">${item.description || ""}</div>
+            ${item.link ? `<div><a href="${item.link}" target="_blank">Link</a></div>` : ""}
           `;
           container.appendChild(div);
         });
       } catch (err) {
-        console.error("Error loading works.json:", err);
+        console.error("Error loading JSON:", err);
       }
     }
 
-    loadWorks();
+    // ページごとに JSON ファイルを指定
+    // Works ページ: "../data/works.json"
+    // News ページ: "../data/news.json"
+    // Discography ページ: "../data/discography.json"
+    // Schedule ページ: "../data/schedule.json"
+    loadItems("../data/works.json");
   </script>
 </body>
 </html>
-
