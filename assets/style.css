@@ -1,0 +1,48 @@
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background: #fefefe;
+  color: #222;
+  margin: 40px;
+  line-height: 1.6;
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 1em;
+}
+
+/* カード型共通スタイル */
+.card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.card .title {
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-bottom: 0.3em;
+}
+
+.card .date, .card .role {
+  font-size: 0.9em;
+  color: #666;
+  margin-right: 10px;
+}
+
+.card .description {
+  margin-top: 0.5em;
+  white-space: pre-wrap;
+}
+
+.card a {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+.card a:hover {
+  text-decoration: underline;
+}
