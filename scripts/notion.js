@@ -55,7 +55,7 @@ async function getProfile() {
       description: props.Description?.rich_text?.[0]?.plain_text || "No description",  // 自己紹介
       // 必要に応じて他のプロパティを追加
     };
-
+    
     await fs.outputJSON("data/profile.json", profile, { spaces: 2 });
     console.log("✅ Profile data saved to data/profile.json");
   } catch (err) {
