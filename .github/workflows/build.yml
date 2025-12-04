@@ -4,7 +4,7 @@ on:
   push:
   workflow_dispatch:
   schedule:
-    - cron: "0 * * * *" # 1時間に1回
+    - cron: "0 * * * *"
 
 jobs:
   build:
