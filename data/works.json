@@ -3,7 +3,7 @@
     "id": "2bfcbfb5-3198-80fe-9211-e608fd825b9b",
     "title": "TEST",
     "role": "test",
-    "description": "GitHub Actions 経由で反映されるかテスト",
+    "description": "テスト",
     "date": "2025-12-04",
     "link": "",
     "tags": [
@@ -14,7 +14,7 @@
     "id": "2bfcbfb5-3198-80bb-a9fd-dcd2f11ae173",
     "title": "TEST2",
     "role": "test2",
-    "description": "GitHub Actions 経由で反映されるかテスト2",
+    "description": "テスト2",
     "date": "2025-12-01",
     "link": "",
     "tags": [
