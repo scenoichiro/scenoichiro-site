@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "dependencies": {
-    "@notionhq/client": "*"
+    "@notionhq/client": "latest",
+    "fs-extra": "latest"
   }
 }
