@@ -16,5 +16,4 @@ async function getDatabase(databaseId, outputFile) {
 
 (async () => {
   await getDatabase(process.env.WORKS_DB, "./data/works.json")
-  await getDatabase(process.env.DISCOGRAPHY_DB, "./data/discography.json")
 })()
