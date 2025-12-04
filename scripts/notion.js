@@ -7,7 +7,6 @@ const notion = new Client({
 
 const databaseId = process.env.WORKS_DB;
 
-// === Notion → JSON ===
 async function getWorks() {
   try {
     const response = await notion.databases.query({
@@ -30,4 +29,17 @@ async function getWorks() {
         description: props.Description?.rich_text?.[0]?.plain_text || "",
         date: props.Date?.date?.start || "",
         link: props.Link?.url || "",
-        tags: props.Tags?.multi_sele_
+        tags: props.Tags?.multi_select?.map((tag) => tag.name) || [],
+      };
+    });
+
+    await fs.outputJSON("data/works.json", works, { spaces: 2 });
+
+    console.log("✅ Works data saved to data/works.json");
+  } catch (error) {
+    console.error("❌ Error fetching works:", error.message);
+    process.exit(1);
+  }
+}
+
+getWorks();
