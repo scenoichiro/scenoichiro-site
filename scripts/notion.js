@@ -60,7 +60,7 @@ async function getProfile() {
         photo: props.Photo?.url || "No photo", // 画像URL（必要に応じて）
       };
     });
-
+    
     await fs.outputJSON("data/profile.json", profiles, { spaces: 2 });
     console.log("✅ Profile data saved to data/profile.json");
   } catch (err) {
