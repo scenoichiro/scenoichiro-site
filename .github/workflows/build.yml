@@ -1,5 +1,39 @@
+name: Build Notion Content
+
+on:
+  push:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 */6 * * *" # 6時間おき
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
 - name: Clean install
   run: |
     rm -rf node_modules
     rm -f package-lock.json
     npm install @notionhq/client
+
+      - name: Fetch Notion Data
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          WORKS_DB: ${{ secrets.WORKS_DB }}
+        run: node scripts/notion.js
+
+      - name: Commit data
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add data/works.json
+          git diff --cached --quiet || git commit -m "Auto update from Notion"
+          git push
