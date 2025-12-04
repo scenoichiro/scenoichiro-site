@@ -55,8 +55,8 @@ async function getProfile() {
       const props = page.properties;
       
       return {
-        name: props.Title?.title?.[0]?.plain_text || "SCENO ICHIRO",
-        description: props.Description?.rich_text?.[0]?.plain_text || "No description",
+        title: props.Title?.title?.[0]?.plain_text || "Untitled",
+        description: props.Description?.rich_text?.[0]?.plain_text || "",
         photo: props.Photo?.url || "No photo", // 画像URL（必要に応じて）
       };
     });
