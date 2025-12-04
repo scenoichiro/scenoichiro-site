@@ -52,17 +52,16 @@ async function getProfile() {
       database_id: ProfilePageId,
     });
 
-    const page = response.results[0]; // 最初のページ
-    const props = page.properties;
+    const page = response.results.map((page) => {
+      const props = page.properties;
 
-    console.log("Page Properties:", props);
-
-    const profile = {
-      title: props.Title?.title?.[0]?.plain_text || "SCENO ICHIRO",
-      description: props.Description?.rich_text?.[0]?.plain_text || "",
-      photo: props.Photo?.url || ""
-    };
-
+      return {
+        title: props.Title?.title?.[0]?.plain_text || "SCENO ICHIRO",
+        description: props.Description?.rich_text?.[0]?.plain_text || "",
+        photo: props.Photo?.url || "",
+      };
+    });
+    
     await fs.outputJSON("data/profile.json", profile, { spaces: 2 });
     console.log("✅ Profile data saved to data/profile.json");
   } catch (err) {
