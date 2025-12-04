@@ -6,7 +6,9 @@ const notion = new Client({
 });
 
 const databaseId = process.env.WORKS_DB;
+const profilePageId = process.env.PROFILE_PAGE;
 
+// === Works データ取得 ===
 async function getWorks() {
   try {
     const response = await notion.databases.query({
@@ -34,7 +36,6 @@ async function getWorks() {
     });
 
     await fs.outputJSON("data/works.json", works, { spaces: 2 });
-
     console.log("✅ Works data saved to data/works.json");
   } catch (error) {
     console.error("❌ Error fetching works:", error.message);
@@ -42,4 +43,30 @@ async function getWorks() {
   }
 }
 
-getWorks();
+// === Profile データ取得 ===
+async function getProfile() {
+  try {
+    const response = await notion.pages.retrieve({ page_id: profilePageId });
+    const props = response.properties;
+
+    const profile = {
+      title: props.Title?.title?.[0]?.plain_text || "SCENO ICHIRO",
+      jp: props.JP?.rich_text?.[0]?.plain_text || "",
+      en: props.EN?.rich_text?.[0]?.plain_text || "",
+    };
+
+    await fs.outputJSON("data/profile.json", profile, { spaces: 2 });
+    console.log("✅ Profile data saved to data/profile.json");
+  } catch (err) {
+    console.error("❌ Error fetching profile:", err.message);
+    process.exit(1);
+  }
+}
+
+// === 実行 ===
+async function main() {
+  await getWorks();
+  await getProfile();
+}
+
+main();
