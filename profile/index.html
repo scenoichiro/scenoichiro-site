@@ -7,54 +7,38 @@
   <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
-  <header>
-    <h1>Profile</h1>
-    <nav>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/news/">News</a></li>
-        <li><a href="/works/">Works</a></li>
-        <li><a href="/profile/">Profile</a></li>
-        <li><a href="/contact/">Contact</a></li>
-        <li><a href="/shop/">Online Shop</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main>
-    <section class="profile">
-      <h2 id="profile-title">SCENO ICHIRO</h2>
-      <p id="profile-description">No description</p>
-      <!-- 追加で画像があれば表示 -->
-      <div id="profile-photo">
-        <img src="" alt="Profile photo" id="profile-photo-img" />
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 SCENO ICHIRO</p>
-  </footer>
+  <h1>Profile</h1>
+  <div id="items-container"></div>
 
   <script>
-    // profile.jsonの読み込み
-    fetch('/data/profile.json')
-      .then(response => response.json())
-      .then(data => {
-        // プロフィールのデータを埋め込む
-        document.getElementById('profile-title').textContent = data.title || "SCENO ICHIRO";
-        document.getElementById('profile-description').textContent = data.description || "No description";
+    async function loadItems(jsonPath) {
+      try {
+        const res = await fetch(jsonPath); // e.g., "../data/works.json"
+        const items = await res.json();
 
-        // 画像URLがあれば、画像を表示
-        if (data.photo && data.photo !== "No photo") {
-          const imgElement = document.getElementById('profile-photo-img');
-          imgElement.src = data.photo;
-          imgElement.alt = "Profile photo";
-        }
-      })
-      .catch(err => {
-        console.error("Error loading profile data:", err);
-      });
+        const container = document.getElementById("items-container");
+
+        items.forEach(item => {
+          const div = document.createElement("div");
+          div.className = "card";
+
+          div.innerHTML = `
+            <div class="title">${item.title}</div>
+            <div class="description">${item.description || ""}</div>
+          `;
+          container.appendChild(div);
+        });
+      } catch (err) {
+        console.error("Error loading JSON:", err);
+      }
+    }
+
+    // ページごとに JSON ファイルを指定
+    // Works ページ: "../data/works.json"
+    // News ページ: "../data/news.json"
+    // Discography ページ: "../data/discography.json"
+    // Schedule ページ: "../data/schedule.json"
+    loadItems("../data/profile.json");
   </script>
 </body>
 </html>
