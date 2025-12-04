@@ -13,6 +13,16 @@
 
   <main>
     <p>Under construction...</p>
+    
+    <section>
+      <h2>Latest Works</h2>
+      <div id="latest-works" class="items-container"></div>
+    </section>
+
+    <section>
+      <h2>Latest News</h2>
+      <div id="latest-news" class="items-container"></div>
+    </section>
 
     <section id="works">
       <h2>Featured Work</h2>
@@ -20,11 +30,10 @@
       <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=DN_ZuUlUSmIx6DX2&amp;list=PL9SNi_dneK2GULvhRLiaUhdq358HYG8zi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </section>
 
-    <!-- ここにWorksやNewsなどのリンクを追加 -->
     <nav>
       <ul>
-        <li><a href="/works/">Works</a></li>
-        <li><a href="/news/">News</a></li>
+        <li><a href="/works/">All Works</a></li>
+        <li><a href="/news/">All News</a></li>
         <li><a href="/discography/">Discography</a></li>
         <li><a href="/schedule/">Schedule</a></li>
       </ul>
@@ -34,6 +43,41 @@
   <footer>
     <p>&copy; 2025 SCENO ICHIRO</p>
   </footer>
+
+  <script>
+    async function loadLatestItems(jsonPath, containerId, limit = 5) {
+      try {
+        const res = await fetch(jsonPath);
+        const items = await res.json();
+        const container = document.getElementById(containerId);
+
+        items.slice(0, limit).forEach(item => {
+          const div = document.createElement("div");
+          div.className = "card";
+
+          div.innerHTML = `
+            <div class="title">${item.title}</div>
+            <div>
+              <span class="role">${item.role || ""}</span>
+              <span class="date">${item.date || ""}</span>
+            </div>
+            <div class="description">${item.description || ""}</div>
+            ${item.link ? `<div><a href="${item.link}" target="_blank">Link</a></div>` : ""}
+          `;
+          container.appendChild(div);
+        });
+      } catch (err) {
+        console.error("Error loading JSON:", err);
+      }
+    }
+
+    // 最新 Works を表示
+    loadLatestItems("/data/works.json", "latest-works", 5);
+
+    // 最新 News を表示
+    loadLatestItems("/data/news.json", "latest-news", 5);
+  </script>
 </body>
 </html>
+
 
