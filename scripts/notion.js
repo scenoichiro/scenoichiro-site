@@ -6,14 +6,14 @@ const notion = new Client({
 });
 
 // 各種データベースIDを指定
-const databaseId = process.env.WORKS_DB;
-const profilePageId = process.env.PROFILE_DB;
+const WorksPageId = process.env.WORKS_DB;
+const ProfilePageId = process.env.PROFILE_DB;
 
 // === Works データ取得 ===
 async function getWorks() {
   try {
     const response = await notion.databases.query({
-      database_id: databaseId,
+      database_id: WorksPageId,
       sorts: [
         {
           property: "Date",
@@ -48,7 +48,7 @@ async function getWorks() {
 async function getProfile() {
   try {
     const response = await notion.databases.query({
-      database_id: profileDatabaseId,
+      database_id: ProfilePageId,
     });
 
     const profiles = response.results.map((page) => {
