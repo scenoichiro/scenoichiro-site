@@ -47,7 +47,7 @@ body {
     width: 30%;
 }
 .top{
-    max-height: 500px;
+    /* max-height: 500px; */
     overflow: hidden;
 }
 
@@ -62,7 +62,7 @@ body {
 }
 
 .copyright{
-    color: #FFF;
+    color: #222;
     font-size: 12px;
     text-align: center;
 }
