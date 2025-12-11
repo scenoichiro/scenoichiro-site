@@ -13,7 +13,7 @@ body {
   /* padding-bottom: 20px; */
   /* padding-top: 20px; */
   display: flex;
-  /* justify-content: space-between; */
+  justify-content: space-between;
   position: -webkit-sticky;
   position:         sticky;
   top: 0;
@@ -22,9 +22,12 @@ body {
 .header-menu ul {
   display: flex;
   list-style: none;
-  gap: 20px; /* リスト項目間に余白を設定 */
+  /* gap: 20px; /* リスト項目間に余白を設定 */
 }
 
+.header-menu ul li {
+  margin-right: 20px; /* 項目ごとの余白 */ 
+}
 
 h1 {
   font-size: 2em;
