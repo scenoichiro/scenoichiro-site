@@ -26,7 +26,6 @@ body {
   -webkit-justify-content: flex-start;
   justify-content: flex-start;
   list-style: none;
-  gap: 20px; /* リスト項目間に余白を設定 */
 }
 
 .header-menu ul a {
@@ -34,15 +33,11 @@ body {
   text-decoration: none;
 }
 
-/* 
+
 .header-menu ul li {
   margin-right: 20px;
 }
-*/
 
-.header-menu ul li:last-of-type {
-    margin-left: auto;
-}　
 
 .header-menu img{
     height: auto;
