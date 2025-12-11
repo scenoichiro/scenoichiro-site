@@ -1,6 +1,6 @@
 body {
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  background: #fefefe;
+  font-family: "Fira Code", monospace, "Helvetica Neue", Arial, sans-serif;
+  background: #FFF8E7;　/* Cosmic latte */
   color: #222;
   margin: 40px;
   line-height: 1.6;
