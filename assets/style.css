@@ -29,6 +29,26 @@ body {
   margin-right: 20px; /* 項目ごとの余白 */ 
 }
 
+.top{
+    max-height: 500px;
+    overflow: hidden;
+}
+.top img{
+    height: auto;
+    width: 100%;
+}
+
+.site-footer{
+    background: #FFF;
+    padding: 80px 0;
+}
+
+.copyright{
+    color: #FFF;
+    font-size: 12px;
+    text-align: center;
+}
+
 h1 {
   font-size: 2em;
   margin-bottom: 1em;
