@@ -21,7 +21,8 @@ body {
 }
 
 .header-menu ul {
- display: flex;
+  display: flex;
+  list-style: none;
 }
 
 h1 {
