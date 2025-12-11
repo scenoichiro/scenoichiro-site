@@ -8,17 +8,12 @@ body {
   line-height: 1.6;
 }
 
-.site-header{
-    background: #fff;
-    display: flex;
-    padding: 20px;
-    position: absolute;
-    justify-content: space-between;
-    width: 100%;
-}
-.site-header.fixed{
-    position: fixed;
-    top: 0;
+.header{
+  padding-bottom: 20px;
+  padding-top: 20px;
+  position: -webkit-sticky;
+  position:         sticky;
+  top: 0;
 }
 
 h1 {
