@@ -20,6 +20,10 @@ body {
   top: 0;
 }
 
+.header-menu ul {
+ display: flex;
+}
+
 h1 {
   font-size: 2em;
   margin-bottom: 1em;
