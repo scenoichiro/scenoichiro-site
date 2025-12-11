@@ -11,7 +11,7 @@ body {
 
 .header-menu{
   font-family: "Jost", sans-serif;
-  background: #FFF;
+  /* background: #FFF; */
   padding: 20px;
   display: flex;
   justify-content: space-between;
@@ -52,7 +52,7 @@ body {
 }
 
 .site-footer{
-    background: #FFF;
+    /* background: #FFF; */
     padding: 80px 0;
 }
 
@@ -70,7 +70,7 @@ h1 {
 
 /* カード型共通スタイル */
 .card {
-  border: 1px solid #ccc;
+  border: 0px solid #ccc;  /* originalは1px */
   border-radius: 8px;
   padding: 20px;
   margin-bottom: 20px;
