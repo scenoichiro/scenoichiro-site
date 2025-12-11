@@ -22,6 +22,7 @@ body {
 .header-menu ul {
   display: flex;
   list-style: none;
+  text-decoration: none;
   /* gap: 20px; /* リスト項目間に余白を設定 */
 }
 
