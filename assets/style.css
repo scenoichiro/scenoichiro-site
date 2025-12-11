@@ -23,7 +23,10 @@ body {
 .header-menu ul {
   display: flex;
   list-style: none;
-  padding-left: 20px;
+}
+
+.header-menu ul li {
+  margin-right: 20px; /* 項目ごとの余白 */
 }
 
 h1 {
