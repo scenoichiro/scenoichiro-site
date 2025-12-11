@@ -34,9 +34,11 @@ body {
   text-decoration: none;
 }
 
+/* 
 .header-menu ul li {
-  margin-right: 20px; /* 項目ごとの余白 */ 
+  margin-right: 20px;
 }
+*/
 
 .header-menu ul li:last-of-type {
     margin-left: auto;
