@@ -32,48 +32,70 @@
     }
 
     /* ── HEADER / NAV ─────────────────────── */
-    .header-menu {
+    header.header-menu {
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 24px 40px;
+      padding: 22px 40px;
       background: var(--bg);
-      border-bottom: 1px solid var(--border);
     }
 
-    .header-menu h1 {
+    header.header-menu h1 {
       font-family: 'Josefin Sans', sans-serif;
       font-size: 1rem;
       font-weight: 300;
-      letter-spacing: 0.3em;
+      letter-spacing: 0.28em;
       color: var(--text);
       text-transform: uppercase;
     }
 
-    .header-menu nav ul {
+    header.header-menu nav {
+      display: block;
+    }
+
+    header.header-menu nav ul {
       display: flex;
       gap: 36px;
       list-style: none;
     }
 
-    .header-menu nav ul li a {
+    header.header-menu nav ul li a {
       font-family: 'Josefin Sans', sans-serif;
       font-size: 0.72rem;
-      letter-spacing: 0.25em;
+      letter-spacing: 0.22em;
       color: var(--text-light);
       text-decoration: none;
       text-transform: uppercase;
       transition: color 0.3s;
     }
 
-    .header-menu nav ul li a:hover { color: var(--text); }
+    header.header-menu nav ul li a:hover { color: var(--text); }
+
+    /* ── HAMBURGER ────────────────────────── */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 6px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 26px;
+      height: 1.5px;
+      background: var(--text);
+      transition: all 0.3s;
+    }
 
     /* ── TOP / HERO VIDEO ─────────────────── */
     .top {
-      padding-top: 73px; /* header height */
+      padding-top: 68px;
     }
 
     .top iframe {
@@ -247,9 +269,9 @@
 
     /* ── RESPONSIVE ───────────────────────── */
     @media (max-width: 640px) {
-      .header-menu { padding: 18px 20px; }
-      .header-menu nav ul { gap: 20px; }
-      .header-menu nav ul li a { font-size: 0.65rem; letter-spacing: 0.15em; }
+      header.header-menu { padding: 18px 20px; }
+      header.header-menu nav { display: none; }
+      .hamburger { display: flex; }
       main { padding: 0 20px; }
       .top iframe { height: 50vw; min-height: 220px; }
     }
@@ -269,6 +291,9 @@
       <li><a href="/shop/">Online Shop</a></li>
     </ul>
   </nav>
+  <button class="hamburger" aria-label="menu">
+    <span></span><span></span><span></span>
+  </button>
 </header>
 
 <div class="top">
@@ -355,6 +380,20 @@
 
   loadLatestItems("/data/works.json", "latest-works", 5);
   loadLatestItems("/data/news.json", "latest-news", 5);
+
+  // Hamburger
+  document.querySelector('.hamburger').addEventListener('click', function() {
+    const nav = document.querySelector('header nav');
+    const isOpen = nav.style.display === 'block';
+    nav.style.cssText = isOpen ? '' :
+      'display:block;position:fixed;top:62px;left:0;right:0;background:var(--bg);padding:24px 40px;border-top:1px solid rgba(30,28,26,0.1)';
+    const ul = nav.querySelector('ul');
+    if (!isOpen) {
+      ul.style.cssText = 'flex-direction:column;gap:20px;display:flex';
+    } else {
+      ul.style.cssText = '';
+    }
+  });
 </script>
 </body>
 </html>
