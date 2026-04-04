@@ -1,5 +1,5 @@
 body {
-  font-family: "Zen Kaku Gothic Antique", sans-serif;
+  font-family: "Jost", "Zen Kaku Gothic Antique", sans-serif;
   font-weight: 400;
   font-style: normal;
   color: #222;
@@ -10,7 +10,7 @@ body {
 }
 
 .header-menu{
-  font-family: "Jost", sans-serif;
+  /* font-family: "Jost", sans-serif; */
   /* background: #FFF; */
   padding: 20px;
   display: flex;
