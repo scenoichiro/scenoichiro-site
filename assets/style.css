@@ -1,0 +1,108 @@
+body {
+  font-family: "Jost", "Zen Kaku Gothic New", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.08rem;
+  color: #222;
+
+  background: #F0EEE9;　/* Cloud Dancer */
+  margin: 40px;
+  line-height: 1.6;
+}
+
+.header-menu{
+  /* font-family: "Jost", sans-serif; */
+  /* background: #FFF; */
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  position: -webkit-sticky;
+  position:         sticky;
+  top: 0;
+}
+
+.header-menu ul {
+  display: -webkit-flex;
+  display: flex;
+  list-style: none;
+}
+
+.header-menu ul a {
+  color: #222;
+  text-decoration: none;
+}
+
+
+.header-menu ul li {
+  margin-right: 20px;
+  letter-spacing: 0.2em;
+}
+
+
+.header-menu img{
+    height: auto;
+    width: 30%;
+}
+.top{
+    max-height: 500px;
+    overflow: hidden;
+}
+
+.top img{
+    height: auto;
+    width: 30%;
+}
+
+.site-footer{
+    /* background: #FFF; */
+    padding: 80px 0;
+}
+
+.copyright{
+    color: #222;
+    font-size: 12px;
+    text-align: center;
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: 500;
+  margin-bottom: 1em;
+  letter-spacing: 0.5em;
+}
+
+/* カード型共通スタイル */
+.card {
+  border: 0px solid #ccc;  /* originalは1px */
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.card .title {
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-bottom: 0.3em;
+}
+
+.card .date, .card .role {
+  font-size: 0.9em;
+  color: #666;
+  margin-right: 10px;
+}
+
+.card .description {
+  margin-top: 0.5em;
+  white-space: pre-wrap;
+}
+
+.card a {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+.card a:hover {
+  text-decoration: underline;
+}
