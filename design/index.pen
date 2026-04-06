@@ -1,0 +1,423 @@
+{
+  "version": "2.10",
+  "children": [
+    {
+      "type": "frame",
+      "id": "bi8Au",
+      "x": 3,
+      "y": -1,
+      "name": "Frame",
+      "clip": true,
+      "width": 1200,
+      "height": 2300,
+      "fill": "#F0EEE9",
+      "layout": "vertical",
+      "padding": [
+        0,
+        40
+      ],
+      "children": [
+        {
+          "type": "frame",
+          "id": "f4qsS",
+          "name": "header",
+          "width": "fill_container",
+          "fill": "#F0EEE9",
+          "padding": 20,
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "RtX1u",
+              "name": "h1",
+              "rotation": 0.05175020424007771,
+              "fill": "#222222",
+              "content": "Sceno Ichiro",
+              "fontFamily": "Jost",
+              "fontSize": 32,
+              "fontWeight": "500",
+              "letterSpacing": 8
+            },
+            {
+              "type": "frame",
+              "id": "DY4C2",
+              "name": "nav",
+              "gap": 20,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "9ao0G",
+                  "name": "nav1",
+                  "fill": "#222222",
+                  "content": "Home",
+                  "fontFamily": "Jost",
+                  "fontSize": 16,
+                  "fontWeight": "normal",
+                  "letterSpacing": 3.2
+                },
+                {
+                  "type": "text",
+                  "id": "39IFr",
+                  "name": "nav4",
+                  "fill": "#222222",
+                  "content": "Profile",
+                  "fontFamily": "Jost",
+                  "fontSize": 16,
+                  "fontWeight": "normal",
+                  "letterSpacing": 3.2
+                },
+                {
+                  "type": "text",
+                  "id": "3H96f",
+                  "name": "nav3",
+                  "fill": "#222222",
+                  "content": "Works",
+                  "fontFamily": "Jost",
+                  "fontSize": 16,
+                  "fontWeight": "normal",
+                  "letterSpacing": 3.2
+                },
+                {
+                  "type": "text",
+                  "id": "vhhDz",
+                  "name": "nav5",
+                  "fill": "#222222",
+                  "content": "Contact",
+                  "fontFamily": "Jost",
+                  "fontSize": 16,
+                  "fontWeight": "normal",
+                  "letterSpacing": 3.2
+                },
+                {
+                  "type": "text",
+                  "id": "EvjMi",
+                  "name": "nav6",
+                  "fill": "#222222",
+                  "content": "Online Shop",
+                  "fontFamily": "Jost",
+                  "fontSize": 16,
+                  "fontWeight": "normal",
+                  "letterSpacing": 3.2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "5cvQc",
+          "name": "topSection",
+          "width": "fill_container",
+          "height": 700,
+          "fill": "#333333",
+          "cornerRadius": 8,
+          "layout": "vertical",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "um3sa",
+              "fill": "#ffffff",
+              "content": "YouTube Video Player Placeholder",
+              "fontFamily": "Jost",
+              "fontSize": 24,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "Aw0eK",
+          "name": "mainSection",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 40,
+          "padding": [
+            40,
+            0
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "pqVLk",
+              "fill": "#222222",
+              "content": "Under construction...",
+              "fontFamily": "Jost",
+              "fontSize": 16,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "Szwyh",
+              "name": "worksSection",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 20,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "XQ1eH",
+                  "fill": "#222222",
+                  "content": "Latest Works",
+                  "fontFamily": "Jost",
+                  "fontSize": 32,
+                  "fontWeight": "500",
+                  "letterSpacing": 4
+                },
+                {
+                  "type": "frame",
+                  "id": "omf3p",
+                  "name": "worksList",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 20,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "eZogN",
+                      "name": "card1",
+                      "width": "fill_container",
+                      "fill": "#ffffff",
+                      "cornerRadius": 8,
+                      "effect": {
+                        "type": "shadow",
+                        "shadowType": "outer",
+                        "color": "#00000020",
+                        "offset": {
+                          "x": 0,
+                          "y": 2
+                        },
+                        "blur": 5
+                      },
+                      "layout": "vertical",
+                      "gap": 10,
+                      "padding": 20,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "iSWVA",
+                          "fill": "#222222",
+                          "content": "Sceno Ichiro Portfolio 2026",
+                          "fontFamily": "Jost",
+                          "fontSize": 19,
+                          "fontWeight": "bold"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "LZi51",
+                          "name": "meta1",
+                          "gap": 10,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "AdKyy",
+                              "fill": "#666666",
+                              "content": "Director",
+                              "fontFamily": "Jost",
+                              "fontSize": 14,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "YvzNg",
+                              "fill": "#666666",
+                              "content": "2026-04-01",
+                              "fontFamily": "Jost",
+                              "fontSize": 14,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "YXExI",
+                          "fill": "#222222",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "The latest portfolio website demonstrating new works.",
+                          "fontFamily": "Jost",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "JlkQD",
+                          "fill": "#0077cc",
+                          "content": "Link",
+                          "fontFamily": "Jost",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "ncGas",
+              "name": "newsSection",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 20,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "3ismY",
+                  "fill": "#222222",
+                  "content": "Latest News",
+                  "fontFamily": "Jost",
+                  "fontSize": 32,
+                  "fontWeight": "500",
+                  "letterSpacing": 4
+                },
+                {
+                  "type": "frame",
+                  "id": "xkQMj",
+                  "name": "newsList",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 20,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "GLVWh",
+                      "name": "ncard1",
+                      "width": "fill_container",
+                      "fill": "#ffffff",
+                      "cornerRadius": 8,
+                      "effect": {
+                        "type": "shadow",
+                        "shadowType": "outer",
+                        "color": "#00000020",
+                        "offset": {
+                          "x": 0,
+                          "y": 2
+                        },
+                        "blur": 5
+                      },
+                      "layout": "vertical",
+                      "gap": 10,
+                      "padding": 20,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "ytYPk",
+                          "fill": "#222222",
+                          "content": "Website Renewed",
+                          "fontFamily": "Jost",
+                          "fontSize": 19,
+                          "fontWeight": "bold"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "IlYZe",
+                          "name": "nmeta1",
+                          "gap": 10,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "FwjNe",
+                              "fill": "#666666",
+                              "content": "2026-04-05",
+                              "fontFamily": "Jost",
+                              "fontSize": 14,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "Twmf2",
+                          "fill": "#222222",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Migrated the website to Astro and updated the design.",
+                          "fontFamily": "Jost",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "ePVTn",
+              "name": "featuredSection",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 20,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "it496",
+                  "fill": "#222222",
+                  "content": "Featured Work",
+                  "fontFamily": "Jost",
+                  "fontSize": 32,
+                  "fontWeight": "500",
+                  "letterSpacing": 4
+                },
+                {
+                  "type": "frame",
+                  "id": "sM34e",
+                  "name": "featuredVideo",
+                  "width": 1119,
+                  "height": 700,
+                  "fill": "#333333",
+                  "layout": "vertical",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "M8pb7",
+                      "fill": "#ffffff",
+                      "content": "Featured Work Video Player",
+                      "fontFamily": "Jost",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "QULU8",
+          "name": "footer",
+          "width": "fill_container",
+          "height": 100,
+          "layout": "vertical",
+          "padding": [
+            40,
+            0
+          ],
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "ya4v0",
+              "name": "© 2026 Sceno Ichiro",
+              "fill": "#222222",
+              "content": "© 2026 Sceno Ichiro",
+              "fontFamily": "Jost",
+              "fontSize": 12,
+              "fontWeight": "normal",
+              "letterSpacing": 4
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

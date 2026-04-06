@@ -1,15 +1,28 @@
 ---
 ---
 <header class="header-menu">
-    <h1>Sceno Ichiro</h1>
+    <a href="/" class="logo-link"><h1>Sceno Ichiro</h1></a>
     <nav>
-        <ul class="header-menu">
+        <ul class="nav-list">
           <li><a href="/">Home</a></li>
-          <li><a href="/news/">News</a></li>
-          <li><a href="/works/">Works</a></li>
           <li><a href="/profile/">Profile</a></li>
+          <li><a href="/works/">Works</a></li>
           <li><a href="/contact/">Contact</a></li>
           <li><a href="https://160clx.booth.pm/" target="_blank" rel="noopener noreferrer">Online Shop</a></li>
         </ul>
     </nav>
+    <button class="hamburger" aria-label="menu">
+      <span></span><span></span><span></span>
+    </button>
 </header>
+<script>
+  const hamburger = document.querySelector('.hamburger');
+  const navList = document.querySelector('.nav-list');
+  
+  if (hamburger && navList) {
+    hamburger.addEventListener('click', () => {
+      navList.classList.toggle('active');
+      hamburger.classList.toggle('active');
+    });
+  }
+</script>

@@ -1,5 +1,12 @@
+import fs from 'node:fs';
+import path from 'node:path';
+
 const NOTION_TOKEN = import.meta.env.NOTION_TOKEN;
 const NOTION_DATABASE_ID = import.meta.env.NOTION_DATABASE_ID;
+
+// キャッシュファイルのパス（プロジェクトルートからの相対パス）
+const CACHE_DIR = path.join(process.cwd(), 'src/data');
+const CACHE_FILE = path.join(CACHE_DIR, 'projects-cache.json');
 
 // YouTubeのURLから動画IDを取り出す関数
 function getYouTubeThumbnail(url) {
@@ -10,6 +17,18 @@ function getYouTubeThumbnail(url) {
 }
 
 export async function getProjects() {
+  // ===== 0. 開発モードかつキャッシュがある場合はキャッシュを返す =====
+  const isDev = import.meta.env.DEV;
+  if (isDev && fs.existsSync(CACHE_FILE)) {
+    try {
+      const cacheData = fs.readFileSync(CACHE_FILE, 'utf-8');
+      console.log("📦 Loading Works from local cache...");
+      return JSON.parse(cacheData);
+    } catch (e) {
+      console.warn("⚠️ Failed to load cache, fetching from Notion API...", e);
+    }
+  }
+
   // ===== ① envチェック =====
   if (!NOTION_TOKEN || !NOTION_DATABASE_ID) {
     console.error("❌ Missing environment variables", {
@@ -18,6 +37,8 @@ export async function getProjects() {
     });
     return [];
   }
+
+  console.log("🌐 Fetching latest Works from Notion API...");
 
   try {
     // ===== ② API呼び出し =====
@@ -67,63 +88,43 @@ export async function getProjects() {
     }
 
     // ===== ⑥ 整形 =====
-
-    return data.results.map((page) => {
+    const projects = data.results.map((page) => {
       const props = page.properties;
       const youtube = props["YouTube"]?.url ?? null;
       const notionCover = page.cover?.external?.url ?? page.cover?.file?.url ?? null;
 
       return {
         id: page.id,
-
-        // タイトル（必須）
-        title:
-          props["プロジェクト名"]?.title?.[0]?.plain_text ??
-          "Untitled",
-
-        // slug（最重要：URL用）
-        slug:
-          props["slug"]?.rich_text?.[0]?.plain_text ??
-          page.id,
-
-        // 公開日
-        date:
-          props["初発表日"]?.date?.start ?? null,
-
-        // タグ
-        tags:
-          props["タグ"]?.multi_select?.map((t) => t.name) ?? [],
-
-        // カテゴリ
-        category:
-          props["カテゴリ"]?.select?.name ?? null,
-
-        // 説明（複数テキスト対応）
-        description:
-          props["説明"]?.rich_text
-            ?.map((t) => t.plain_text)
-            .join("") ?? "",
-
-        // メディア
-        youtube:
-          props["YouTube"]?.url ?? null,
-
-        niconico:
-          props["NicoNico"]?.url ?? null,
-
-        // YouTubeサムネイルを優先、なければNotionカバー画像
+        title: props["プロジェクト名"]?.title?.[0]?.plain_text ?? "Untitled",
+        slug: props["slug"]?.rich_text?.[0]?.plain_text ?? page.id,
+        date: props["初発表日"]?.date?.start ?? null,
+        tags: props["タグ"]?.multi_select?.map((t) => t.name) ?? [],
+        category: props["カテゴリ"]?.select?.name ?? null,
+        description: props["説明"]?.rich_text?.map((t) => t.plain_text).join("") ?? "",
+        youtube: props["YouTube"]?.url ?? null,
+        niconico: props["NicoNico"]?.url ?? null,
         thumbnail: getYouTubeThumbnail(youtube) ?? notionCover,
-
-        // 管理系（将来用）
-        createdAt:
-          props["作成日"]?.created_time ?? null,
-
-        updatedAt:
-          props["更新日"]?.last_edited_time ?? null,
+        createdAt: props["作成日"]?.created_time ?? null,
+        updatedAt: props["更新日"]?.last_edited_time ?? null,
       };
     });
+
+    // ===== ⑦ 開発モードならキャッシュを保存 =====
+    if (isDev) {
+      try {
+        if (!fs.existsSync(CACHE_DIR)) {
+          fs.mkdirSync(CACHE_DIR, { recursive: true });
+        }
+        fs.writeFileSync(CACHE_FILE, JSON.stringify(projects, null, 2));
+        console.log("💾 Works cache saved to:", CACHE_FILE);
+      } catch (e) {
+        console.warn("⚠️ Failed to save cache file:", e);
+      }
+    }
+
+    return projects;
   } catch (error) {
-    // ===== ⑦ 例外キャッチ =====
+    // ===== ⑧ 例外キャッチ =====
     console.error("❌ Unexpected error in getProjects:", error);
     return [];
   }
