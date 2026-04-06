@@ -1,0 +1,34 @@
+---
+import Layout from '../layouts/Layout.astro';
+import fs from 'node:fs/promises';
+import path from 'node:path';
+
+let news = [];
+try {
+  const newsPath = path.join(process.cwd(), 'public/data/news.json');
+  const newsData = await fs.readFile(newsPath, 'utf-8');
+  news = JSON.parse(newsData);
+} catch (e) {
+  console.error("News load error", e);
+}
+---
+
+<Layout title="News ｜ Sceno Ichiro">
+  <main>
+    <h2>News</h2>
+    <div class="items-container">
+      {news.map(item => (
+        <div class="card">
+          <div class="title">{item.title}</div>
+          <div>
+            <span class="date">{item.date || ""}</span>
+          </div>
+          <div class="description">{item.description || ""}</div>
+          {item.link ? (
+            <div><a href={item.link} target="_blank">Link</a></div>
+          ) : null}
+        </div>
+      ))}
+    </div>
+  </main>
+</Layout>

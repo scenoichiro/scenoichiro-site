@@ -1,0 +1,279 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getProjects } from '../../lib/notion.js';
+
+const projects = await getProjects();
+
+// 絞り込み用のユニークな値を取得
+const allCategories = [...new Set(projects.map(p => p.category).filter(Boolean))];
+const tagOrder = [
+  'ボーカル楽曲制作',
+  '劇伴/BGM',
+  'カバーINST制作',
+  'Mix',
+  'Key.',
+  'コンピ参加',
+  '個人リリース',
+  '自主制作音源',
+];
+
+const allTags = [...new Set(projects.flatMap(p => p.tags))]
+  .sort((a, b) => {
+    const indexA = tagOrder.indexOf(a);
+    const indexB = tagOrder.indexOf(b);
+
+    if (indexA === -1 && indexB === -1) return a.localeCompare(b, 'ja');
+    if (indexA === -1) return 1;
+    if (indexB === -1) return -1;
+    return indexA - indexB;
+  });
+const allYears = [...new Set(projects.map(p => p.date?.slice(0, 4)).filter(Boolean))].sort((a, b) => b - a);
+---
+
+<Layout title="Works ｜ Sceno Ichiro">
+  <main>
+    <style>
+      h1 {
+        margin-bottom: 1.5rem;
+      }
+
+      .controls {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .controls-row {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+      }
+
+      .controls-label {
+        font-size: 0.8rem;
+        color: #888;
+        min-width: 4rem;
+      }
+
+      .controls-row button {
+        padding: 0.4rem 1rem;
+        border-radius: 999px;
+        border: 2px solid #222;
+        background: white;
+        color: #222;
+        font-size: 0.85rem;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+
+      .controls-row button.active {
+        background: #222;
+        color: white;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .card {
+        background: white;
+        border-radius: 12px;
+        padding: 1.5rem;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      }
+
+      .card.hidden {
+        display: none;
+      }
+
+      .card h2 {
+        font-size: 1.1rem;
+        margin: 0 0 0.5rem;
+      }
+
+      .card .date {
+        font-size: 0.85rem;
+        color: #888;
+        margin-bottom: 0.75rem;
+      }
+
+      .card .description {
+        font-size: 0.9rem;
+        color: #444;
+        margin-bottom: 1rem;
+      }
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .tag {
+        background: #eee;
+        border-radius: 999px;
+        padding: 0.2rem 0.7rem;
+        font-size: 0.75rem;
+        color: #555;
+      }
+
+      .links {
+        display: flex;
+        gap: 0.5rem;
+      }
+
+      .links a {
+        font-size: 0.85rem;
+        padding: 0.3rem 0.8rem;
+        border-radius: 6px;
+        background: #222;
+        color: white;
+        text-decoration: none;
+      }
+    </style>
+
+    <h1>Works</h1>
+
+    <div class="controls">
+
+      <!-- 並び替え -->
+      <div class="controls-row">
+        <span class="controls-label">並び替え</span>
+        <button class="sort-btn active" data-sort="date">日付順</button>
+        <button class="sort-btn" data-sort="category">依頼区分別</button>
+        <button class="sort-btn" data-sort="tag">タグ別</button>
+      </div>
+
+      <!-- 年別で絞り込み -->
+      <div class="controls-row">
+        <span class="controls-label">年</span>
+        <button class="filter-year-btn active" data-year="">すべて</button>
+        {allYears.map(year => (
+          <button class="filter-year-btn" data-year={year}>{year}</button>
+        ))}
+      </div>
+
+      <!-- タグで絞り込み -->
+      <div class="controls-row">
+        <span class="controls-label">タグ</span>
+        <button class="filter-tag-btn active" data-tag="">すべて</button>
+        {allTags.map(tag => (
+          <button class="filter-tag-btn" data-tag={tag}>{tag}</button>
+        ))}
+      </div>
+
+    </div>
+
+    <div class="grid" id="grid">
+      {projects.map((project) => (
+        <div
+          class="card"
+          data-date={project.date ?? ""}
+          data-year={project.date?.slice(0, 4) ?? ""}
+          data-category={project.category ?? ""}
+          data-tags={project.tags.join(",")}
+        >
+          {project.tags.length > 0 && (
+            <div class="tags">
+              {project.tags.map((tag) => (
+                <span class="tag">{tag}</span>
+              ))}
+            </div>
+          )}
+          <h2>{project.title}</h2>
+          {project.thumbnail && (
+            <img src={project.thumbnail} alt={project.title} style="width:100%;height:160px;object-fit:cover;border-radius:8px;margin-bottom:0.75rem;" />
+          )}
+          {project.date && <p class="date">{project.date}</p>}
+          {project.description && <p class="description">{project.description}</p>}
+          <div class="links">
+            {project.youtube && <a href={project.youtube} target="_blank">YouTube</a>}
+            {project.niconico && <a href={project.niconico} target="_blank">NicoNico</a>}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <script>
+      const grid = document.getElementById('grid');
+
+      let activeSort = 'date';
+      let activeYear = '';
+      let activeCategory = '';
+      let activeTag = '';
+
+      // 並び替え
+      document.querySelectorAll('.sort-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          activeSort = btn.dataset.sort;
+          applyAll();
+        });
+      });
+
+      // 年フィルター
+      document.querySelectorAll('.filter-year-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.filter-year-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          activeYear = btn.dataset.year;
+          applyAll();
+        });
+      });
+
+      // 依頼区分フィルター
+      document.querySelectorAll('.filter-category-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.filter-category-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          activeCategory = btn.dataset.category;
+          applyAll();
+        });
+      });
+
+      // タグフィルター
+      document.querySelectorAll('.filter-tag-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.filter-tag-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          activeTag = btn.dataset.tag;
+          applyAll();
+        });
+      });
+
+      function applyAll() {
+        const cards = Array.from(grid.children);
+
+        // 絞り込み（年・依頼区分・タグの3つを同時に適用）
+        cards.forEach(card => {
+          const matchYear = !activeYear || card.dataset.year === activeYear;
+          const matchCategory = !activeCategory || card.dataset.category === activeCategory;
+          const matchTag = !activeTag || card.dataset.tags.split(',').includes(activeTag);
+          card.classList.toggle('hidden', !(matchYear && matchCategory && matchTag));
+        });
+
+        // 並び替え
+        cards.sort((a, b) => {
+          if (activeSort === 'date') {
+            return (b.dataset.date || '').localeCompare(a.dataset.date || '');
+          } else if (activeSort === 'category') {
+            return (a.dataset.category || '').localeCompare(b.dataset.category || '', 'ja');
+          } else if (activeSort === 'tag') {
+            const tagA = a.dataset.tags.split(',')[0] || '';
+            const tagB = b.dataset.tags.split(',')[0] || '';
+            return tagA.localeCompare(tagB, 'ja');
+          }
+          return 0;
+        });
+
+        cards.forEach(card => grid.appendChild(card));
+      }
+    </script>
+  </main>
+</Layout>

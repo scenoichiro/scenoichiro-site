@@ -1,0 +1,72 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getProjects } from '../lib/notion.js';
+import fs from 'node:fs/promises';
+import path from 'node:path';
+
+// Worksの最新5件を取得
+const projects = await getProjects();
+const latestWorks = projects.slice(0, 5);
+
+// Newsの取得 (公開用の public/data/news.json を直接読み込む)
+let latestNews = [];
+try {
+  const newsPath = path.join(process.cwd(), 'public/data/news.json');
+  const newsData = await fs.readFile(newsPath, 'utf-8');
+  latestNews = JSON.parse(newsData).slice(0, 5);
+} catch (e) {
+  console.error("News data loading error", e);
+}
+---
+
+<Layout title="Sceno Ichiro ｜ website">
+  <div class="top">
+    <iframe width="100%" height="700px" src="https://www.youtube.com/embed/62dkm3bogjI?si=SmWVMbPCLhLSEfZk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+  
+  <main>
+    <p>Under construction...</p>
+    
+    <section>
+      <h2>Latest Works</h2>
+      <div class="items-container">
+        {latestWorks.map(item => (
+          <div class="card">
+            <div class="title">{item.title}</div>
+            <div>
+              <span class="role">{item.role || ""}</span>
+              <span class="date">{item.date || ""}</span>
+            </div>
+            <div class="description">{item.description || ""}</div>
+            {item.youtube || item.niconico ? (
+              <div><a href={item.youtube || item.niconico} target="_blank">Link</a></div>
+            ) : null}
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section>
+      <h2>Latest News</h2>
+      <div class="items-container">
+        {latestNews.map(item => (
+          <div class="card">
+            <div class="title">{item.title}</div>
+            <div>
+              <span class="date">{item.date || ""}</span>
+            </div>
+            <div class="description">{item.description || ""}</div>
+            {item.link ? (
+              <div><a href={item.link} target="_blank">Link</a></div>
+            ) : null}
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section id="works">
+      <h2>Featured Work</h2>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=DN_ZuUlUSmIx6DX2&amp;list=PL9SNi_dneK2GULvhRLiaUhdq358HYG8zi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </section>
+  </main>
+</Layout>

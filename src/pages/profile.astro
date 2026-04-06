@@ -1,0 +1,31 @@
+---
+import Layout from '../layouts/Layout.astro';
+import fs from 'node:fs/promises';
+import path from 'node:path';
+
+let profiles = [];
+try {
+  const profilePath = path.join(process.cwd(), 'public/data/profile.json');
+  const profileData = await fs.readFile(profilePath, 'utf-8');
+  profiles = JSON.parse(profileData);
+} catch (e) {
+  console.error("Profile load error", e);
+}
+---
+
+<Layout title="Profile ｜ Sceno Ichiro">
+  <main>
+    <h2>Profile</h2>
+    <div class="items-container">
+      {profiles.map(profile => (
+        <div class="card">
+          <div class="title">{profile.title}</div>
+          <div class="description" style="white-space: pre-wrap;">{profile.description || ""}</div>
+          {profile.photo ? (
+            <img src={profile.photo} alt={profile.title} style="max-width: 100%; border-radius: 8px; margin-top: 1rem;" />
+          ) : null}
+        </div>
+      ))}
+    </div>
+  </main>
+</Layout>

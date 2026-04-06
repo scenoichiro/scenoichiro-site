@@ -1,41 +1,35 @@
-name: Build Notion Content
+name: Deploy Astro Site
 
 on:
   push:
+    branches: [main]
   workflow_dispatch:
   schedule:
-    - cron: "0 */6 * * *"
+    - cron: "0 */6 * * *"   # 6時間ごとに自動リビルド
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v3
-
-      - name: Setup Node
-        uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 22
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Fetch Notion Data
+      - name: Build Astro site
+        run: npm run build
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
           WORKS_DB: ${{ secrets.WORKS_DB }}
           PROFILE_DB: ${{ secrets.PROFILE_DB }}
-        run: node scripts/notion.js
 
-      - name: Commit data
-        run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-
-          git fetch origin main
-          git merge origin/main --no-edit || true
-
-          git add data/works.json data/profile.json
-          git diff --cached --quiet || git commit -m "Auto update from Notion"
-          git push origin main
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          cname: www.scenoichiro.com

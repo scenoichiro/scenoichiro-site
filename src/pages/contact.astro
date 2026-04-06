@@ -1,0 +1,18 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contact ｜ Sceno Ichiro">
+  <main>
+    <h2>Contact</h2>
+    <div class="form-container" style="max-width: 600px; margin: 0 auto; padding: 2rem 0;">
+      <script src="https://sdk.form.run/js/v2/embed.js" is:inline></script>
+      <div
+        class="formrun-embed"
+        data-formrun-form="@sceno-inquiry"
+        data-formrun-redirect="true"
+      >
+      </div>
+    </div>
+  </main>
+</Layout>

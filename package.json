@@ -1,15 +1,19 @@
 {
   "name": "scenoichiro-site",
-  "version": "1.0.0",
   "type": "module",
-  "private": true,
-  "dependencies": {
-    "@notionhq/client": "2.2.15",
-    "fs-extra": "11.2.0"
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=22.12.0"
   },
   "scripts": {
-    "build": "node notion.js",
-    "dev": "node notion.js",
-    "start": "node notion.js"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@notionhq/client": "2.2.15",
+    "fs-extra": "11.2.0",
+    "astro": "^6.1.3"
   }
 }
