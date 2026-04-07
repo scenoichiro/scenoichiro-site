@@ -42,7 +42,6 @@ const allYears = [
         font-weight: 500;
         letter-spacing: 4.8px;
         margin-bottom: 2.5rem;
-        text-transform: uppercase;
       }
 
       .controls {
@@ -50,6 +49,11 @@ const allYears = [
         flex-direction: column;
         gap: 0.75rem;
         margin-bottom: 1.5rem;
+        position: sticky;
+        top: 72px;
+        z-index: 90;
+        background: #F0EEE9;
+        padding: 12px 0;
       }
 
       .controls-row {
@@ -266,12 +270,63 @@ const allYears = [
         color: white;
         text-decoration: none;
       }
+
+      /* スマホ用ドロップダウン */
+      .controls-select-row {
+        display: none;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .controls-selects-wrapper {
+        display: none;
+      }
+
+      .controls-select-label {
+        font-family: "Jost", sans-serif;
+        font-size: 12px;
+        color: #888;
+        letter-spacing: 2px;
+        flex-shrink: 0;
+      }
+
+      .controls-select-row select {
+        padding: 6px 12px;
+        border-radius: 20px;
+        border: 1px solid #222;
+        background: transparent;
+        color: #222;
+        font-family: "Jost", sans-serif;
+        font-size: 12px;
+        cursor: pointer;
+        appearance: none;
+        -webkit-appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23222' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 10px center;
+        padding-right: 28px;
+      }
+
+      @media (max-width: 860px) {
+        .controls-row {
+          display: none;
+        }
+        .controls-selects-wrapper {
+          display: flex;
+          gap: 1.5rem;
+          flex-wrap: wrap;
+          align-items: center;
+        }
+        .controls-select-row {
+          display: flex;
+        }
+      }
     </style>
 
-    <h1>Works</h1>
+    <h1 class="reveal">Works</h1>
 
-    <div class="controls">
-      <!-- 年別で絞り込み -->
+    <div class="controls reveal">
+      <!-- 年別で絞り込み（PC：ボタン） -->
       <div class="controls-row">
         <span class="controls-label">YEAR</span>
         <button class="filter-year-btn active" data-year="">ALL</button>
@@ -282,6 +337,26 @@ const allYears = [
             </button>
           ))
         }
+      </div>
+
+      <!-- 年別で絞り込み（スマホ：ドロップダウン） -->
+      <div class="controls-selects-wrapper">
+        <div class="controls-select-row">
+          <span class="controls-select-label">YEAR</span>
+          <select id="select-year">
+            <option value="">ALL</option>
+            {allYears.map((year) => <option value={year}>{year}</option>)}
+          </select>
+        </div>
+
+        <!-- カテゴリで絞り込み（スマホ：ドロップダウン） -->
+        <div class="controls-select-row">
+          <span class="controls-select-label">CATEGORY</span>
+          <select id="select-tag">
+            <option value="">ALL</option>
+            {allTags.map((tag) => <option value={tag}>{tag}</option>)}
+          </select>
+        </div>
       </div>
 
       <!-- タグで絞り込み（1行目） -->
@@ -310,13 +385,14 @@ const allYears = [
           }
         </div>
       )}
+
     </div>
 
     <div class="grid" id="grid">
       {
         projects.map((project) => (
           <div
-            class={`card ${project.thumbnail ? "has-thumb" : ""}`}
+            class={`card reveal ${project.thumbnail ? "has-thumb" : ""}`}
             data-date={project.date ?? ""}
             data-year={project.date?.slice(0, 4) ?? ""}
             data-category={project.category ?? ""}
@@ -417,6 +493,18 @@ const allYears = [
         });
       });
 
+      // スマホ：年ドロップダウン
+      document.getElementById("select-year")?.addEventListener("change", (e) => {
+        activeYear = e.target.value;
+        applyAll();
+      });
+
+      // スマホ：カテゴリドロップダウン
+      document.getElementById("select-tag")?.addEventListener("change", (e) => {
+        activeTag = e.target.value;
+        applyAll();
+      });
+
       function applyAll() {
         const cards = Array.from(grid.children);
 
@@ -451,6 +539,24 @@ const allYears = [
         });
 
         cards.forEach((card) => grid.appendChild(card));
+
+        // 全カードのvisibleクラスを一旦削除（リセット）
+        cards.forEach(card => card.classList.remove('visible'));
+
+        // 表示されているカードのみ、順番に遅延を再設定して再表示
+        const visibleCards = cards.filter(card => !card.classList.contains('hidden'));
+        visibleCards.forEach((card, i) => {
+          card.style.transitionDelay = `${i * 0.01}s`;
+          // 少し遅延させてからvisibleを付与（アニメーションのため）
+          setTimeout(() => card.classList.add('visible'), 10);
+        });
+
+        // FilterSectionの位置までスクロール
+        const controls = document.querySelector('.controls');
+        if (controls) {
+          const offset = controls.offsetTop - 80; // ヘッダー分のオフセット
+          window.scrollTo({ top: offset, behavior: 'smooth' });
+        }
       }
     </script>
   </main>

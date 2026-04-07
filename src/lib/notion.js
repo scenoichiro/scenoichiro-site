@@ -41,54 +41,67 @@ export async function getProjects() {
   console.log("🌐 Fetching latest Works from Notion API...");
 
   try {
-    // ===== ② API呼び出し =====
-    const response = await fetch(
-      `https://api.notion.com/v1/databases/${NOTION_DATABASE_ID}/query`,
-      {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${NOTION_TOKEN}`,
-          "Notion-Version": "2022-06-28",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          filter: {
-            property: "Published",
-            checkbox: { equals: true },
+    // ===== ② API呼び出し（ページネーション対応） =====
+    let allResults = [];
+    let hasMore = true;
+    let startCursor = undefined;
+
+    while (hasMore) {
+      const response = await fetch(
+        `https://api.notion.com/v1/databases/${NOTION_DATABASE_ID}/query`,
+        {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${NOTION_TOKEN}`,
+            "Notion-Version": "2022-06-28",
+            "Content-Type": "application/json",
           },
-          sorts: [
-            {
-              property: "初発表日",
-              direction: "descending",
+          body: JSON.stringify({
+            filter: {
+              property: "Published",
+              checkbox: { equals: true },
             },
-          ],
-        }),
+            sorts: [
+              {
+                property: "初発表日",
+                direction: "descending",
+              },
+            ],
+            start_cursor: startCursor,
+          }),
+        }
+      );
+
+      // ===== ③ HTTPエラーチェック =====
+      if (!response.ok) {
+        const text = await response.text();
+        console.error("❌ HTTP Error:", response.status, text);
+        return [];
       }
-    );
 
-    // ===== ③ HTTPエラーチェック =====
-    if (!response.ok) {
-      const text = await response.text();
-      console.error("❌ HTTP Error:", response.status, text);
-      return [];
-    }
+      const data = await response.json();
 
-    const data = await response.json();
+      // ===== ④ Notionエラーチェック =====
+      if (data.object === "error") {
+        console.error("❌ Notion API Error:", data);
+        return [];
+      }
 
-    // ===== ④ Notionエラーチェック =====
-    if (data.object === "error") {
-      console.error("❌ Notion API Error:", data);
-      return [];
-    }
+      // ===== ⑤ resultsチェック =====
+      if (!Array.isArray(data.results)) {
+        console.error("❌ Invalid results:", data);
+        return [];
+      }
 
-    // ===== ⑤ resultsチェック =====
-    if (!Array.isArray(data.results)) {
-      console.error("❌ Invalid results:", data);
-      return [];
+      allResults = allResults.concat(data.results);
+      hasMore = data.has_more;
+      startCursor = data.next_cursor;
+
+      console.log(`📄 Fetched ${data.results.length} items (total: ${allResults.length})`);
     }
 
     // ===== ⑥ 整形 =====
-    const projects = data.results.map((page) => {
+    const projects = allResults.map((page) => {
       const props = page.properties;
       const youtube = props["YouTube"]?.url ?? null;
       const notionCover = page.cover?.external?.url ?? page.cover?.file?.url ?? null;

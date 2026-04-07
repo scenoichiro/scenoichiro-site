@@ -27,5 +27,75 @@ const { title = "Sceno Ichiro ｜ website" } = Astro.props;
 		<Header />
 		<slot />
 		<Footer />
+		
+		<!-- 左下固定アイコン -->
+		<img src="/assets/portrait.png" alt="Sceno Ichiro" class="fixed-logo-icon" />
+
+		<script>
+		  // JS実行開始を通知（チラつき防止）
+		  document.body.classList.add('js-ready');
+
+		  // 右下アイコン：ページ末尾近くで表示、クリックでトップへ
+		  const fixedIcon = document.querySelector('.fixed-logo-icon');
+		  if (fixedIcon) {
+		    window.addEventListener('scroll', () => {
+		      const scrolledToBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 500;
+		      fixedIcon.classList.toggle('visible', scrolledToBottom);
+		    });
+		    fixedIcon.addEventListener('click', () => {
+		      window.scrollTo({ top: 0, behavior: 'smooth' });
+		    });
+		  }
+
+		  // スクロールアニメーション
+		  const observer = new IntersectionObserver((entries) => {
+		    entries.forEach(entry => {
+		      if (entry.isIntersecting) {
+		        entry.target.classList.add('visible');
+		        observer.unobserve(entry.target);
+		      }
+		    });
+		  }, { threshold: 0.01, rootMargin: '0px 0px 0px 0px' });
+
+		  // 明示的に .reveal クラスがついている要素
+		  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+		  // main直下の要素も自動でreveal対象に（h1, h2, p, section, article, .card など）
+		  document.querySelectorAll('main > *, main h1, main h2, main p, main section, main article')
+		    .forEach((el, i) => {
+		      if (!el.classList.contains('reveal')) {
+		        el.classList.add('reveal');
+		        el.style.transitionDelay = `${i * 0.02}s`;
+		        observer.observe(el);
+		      }
+		    });
+
+		  // スクロール停止時に画面内の未表示要素を強制表示
+		  let scrollTimeout;
+		  window.addEventListener('scroll', () => {
+		    clearTimeout(scrollTimeout);
+		    scrollTimeout = setTimeout(() => {
+		      document.querySelectorAll('.reveal:not(.visible)').forEach(el => {
+		        const rect = el.getBoundingClientRect();
+		        const isInViewport = rect.top < window.innerHeight && rect.bottom > 0;
+		        if (isInViewport) {
+		          el.classList.add('visible');
+		        }
+		      });
+		    }, 75);
+		  });
+
+		  // ページ遷移フェードアウト（mainのみ）
+		  document.querySelectorAll('a[href]').forEach(link => {
+		    const href = link.getAttribute('href');
+		    if (!href || href.startsWith('#') || href.startsWith('http') || href.startsWith('mailto')) return;
+		    link.addEventListener('click', (e) => {
+		      e.preventDefault();
+		      const main = document.querySelector('main');
+		      if (main) main.classList.add('page-leaving');
+		      setTimeout(() => { window.location.href = href; }, 300);
+		    });
+		  });
+		</script>
 	</body>
 </html>

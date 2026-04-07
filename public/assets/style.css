@@ -5,16 +5,79 @@ body {
   letter-spacing: 0.08rem;
   color: #222;
 
-  background: #F0EEE9; /* Cloud Dancer */
+  background: #F0EEE9;
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 5%;
   line-height: 1.6;
 }
 
+/* 右下固定アイコン（ページトップへ戻るボタン） */
+.fixed-logo-icon {
+  position: fixed;
+  bottom: -250px;
+  right: 6%;
+  left: auto;
+  width: 11rem;
+  height: 11rem;
+  object-fit: cover;
+  z-index: 1000;
+  opacity: 0;
+  transform: scaleX(-1) rotate(-18deg);
+  transition: bottom 0.5s ease, opacity 0.5s ease;
+  cursor: pointer;
+}
+
+.fixed-logo-icon.visible {
+  bottom: -50px;
+  opacity: 0.8;
+}
+
+.fixed-logo-icon:hover {
+  opacity: 1;
+}
+
+/* ページ読み込み時フェードイン（mainのみ） */
+main {
+  animation: pageFadeIn 0.3s ease forwards;
+}
+
+@keyframes pageFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* スクロールアニメーション用 */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* JS読み込み前は通常表示（チラつき防止のため、JS実行後に.revealを付ける） */
+body:not(.js-ready) .reveal {
+  opacity: 1;
+  transform: none;
+}
+
+/* ページ遷移フェードアウト（mainのみ） */
+main.page-leaving {
+  animation: pageFadeOut 0.3s ease forwards;
+}
+
+@keyframes pageFadeOut {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(-8px); }
+}
+
 .header-menu{
   background: #F0EEE9;
-  padding: 20px;
+  padding: 20px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -46,6 +109,11 @@ body {
   color: #222;
   text-decoration: none;
   letter-spacing: 0.2em;
+  transition: color 0.2s ease;
+}
+
+.nav-list a:hover {
+  color: #FF4000;
 }
 
 .header-menu img{
@@ -186,4 +254,38 @@ h2 {
 
 .card a:hover {
   text-decoration: underline;
+}
+
+/* ヒーロー画像 */
+.hero-image {
+  width: 100%;
+  overflow: hidden;
+  margin: -40px -5% 40px -5%;
+  display: flex;
+  scale: 82%;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  position: relative;
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.hero-text {
+  position: absolute;
+  right: 0%;
+  bottom: 7%;
+  transform: translateY(-50%);
+  font-family: "Jost", "Zen Kaku Gothic New", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: #222;
+  background: #F0EEE9;
+  letter-spacing: 0.1em;
+  text-align: left;
+  line-height: 1.6;
 }
