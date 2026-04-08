@@ -143,7 +143,7 @@ main.page-leaving {
 }
 
 /* 項目数が多いため、改行する前に（960px以下で）ハンバーガーメニューに切り替える設定 */
-@media (max-width: 960px) {
+@media (max-width: 740px) {
   .nav-list {
     display: flex;
     flex-direction: column;
@@ -281,11 +281,43 @@ h2 {
   bottom: 7%;
   transform: translateY(-50%);
   font-family: "Jost", "Zen Kaku Gothic New", sans-serif;
-  font-size: 24px;
+  font-size: clamp(12px, 2.5vw, 24px);
   font-weight: 500;
   color: #222;
   background: #F0EEE9;
   letter-spacing: 0.1em;
   text-align: left;
   line-height: 1.6;
+}
+
+/* スクロールインジケーター */
+.scroll-indicator {
+  position: absolute;
+  left: -40px;
+  bottom: 10%;
+  color: #FF4000;
+  font-family: "Jost", sans-serif;
+  font-size: clamp(12px, 2.5vw, 18px);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  animation: scrollBounce 2s ease-in-out infinite;
+  opacity: 0.8;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  transform-origin: center;
+  transform: rotate(90deg);
+  z-index: 10;
+}
+
+.scroll-indicator:hover {
+  opacity: 1;
+}
+
+@keyframes scrollBounce {
+  0%, 100% {
+    transform: rotate(90deg) translateX(0);
+  }
+  50% {
+    transform: rotate(90deg) translateX(8px);
+  }
 }
