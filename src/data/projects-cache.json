@@ -1,5 +1,21 @@
 [
   {
+    "id": "270cbfb5-3198-8095-80ac-f6cc88fc6cee",
+    "title": "鬱ゲーEDコンピ",
+    "slug": "270cbfb5-3198-8095-80ac-f6cc88fc6cee",
+    "date": "2026-04-25",
+    "tags": [
+      "コンピ参加"
+    ],
+    "category": null,
+    "description": "",
+    "youtube": null,
+    "niconico": null,
+    "thumbnail": null,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
     "id": "2c8cbfb5-3198-80ce-82f8-c396df328e49",
     "title": "夜世生宵『Haconië』（烏有游様VRChatWorld向け）",
     "slug": "2c8cbfb5-3198-80ce-82f8-c396df328e49",
@@ -260,7 +276,7 @@
   },
   {
     "id": "22ecbfb5-3198-8078-9207-e06967fc77a4",
-    "title": "[inst.] Tele_がらすの線",
+    "title": "RiCO『Tele / がらすの線』",
     "slug": "22ecbfb5-3198-8078-9207-e06967fc77a4",
     "date": "2025-07-13",
     "tags": [
@@ -292,7 +308,7 @@
   },
   {
     "id": "1d2cbfb5-3198-8062-9790-ccc4ec2f30c2",
-    "title": "[key.] VD25：Nem × Zillah",
+    "title": "ジラリアンズ『』",
     "slug": "1d2cbfb5-3198-8062-9790-ccc4ec2f30c2",
     "date": "2025-07-01",
     "tags": [
@@ -308,14 +324,14 @@
   },
   {
     "id": "17bcbfb5-3198-80b1-a1d7-f015e9dcb8b5",
-    "title": "VD25：0r not to b∃『Recollection C0d∃』",
+    "title": "0r not to b∃『Recollection C0d∃』",
     "slug": "17bcbfb5-3198-80b1-a1d7-f015e9dcb8b5",
     "date": "2025-07-01",
     "tags": [
       "Key."
     ],
     "category": null,
-    "description": "Nomaさんたち",
+    "description": "VocaDuo2025参加作品",
     "youtube": null,
     "niconico": null,
     "thumbnail": null,
@@ -356,14 +372,14 @@
   },
   {
     "id": "1eccbfb5-3198-8027-98f6-e3c95620dad3",
-    "title": "[mix] 久遠真雪『陽だまりの風』",
+    "title": "久遠真雪『陽だまりの風』（小鳥遊まこ、しゃのあ）",
     "slug": "1eccbfb5-3198-8027-98f6-e3c95620dad3",
     "date": "2025-06-15",
     "tags": [
       "Mix"
     ],
     "category": null,
-    "description": "Vocal Mix / 久遠真雪 作詞20周年記念作品『Lyrics note』Tr.3（w/ 小鳥遊まこ、しゃのあ）",
+    "description": "担当：Tr.3 - Vocal Mix / \n久遠真雪 作詞20周年記念作品『Lyrics note』",
     "youtube": null,
     "niconico": null,
     "thumbnail": null,
@@ -388,7 +404,7 @@
   },
   {
     "id": "130cbfb5-3198-800c-97a2-dc060a79604a",
-    "title": "ふたりだけの庭 feat. みちとせ（架空アニソン2025）",
+    "title": "ふたりだけの庭 feat. みちとせ",
     "slug": "130cbfb5-3198-800c-97a2-dc060a79604a",
     "date": "2025-05-17",
     "tags": [
@@ -420,7 +436,7 @@
   },
   {
     "id": "172cbfb5-3198-809c-9329-f7a633a198f5",
-    "title": "[inst] Asukadogカバー：WINDING ROAD（絢香×コブクロ）",
+    "title": "Asukadog『絢香×コブクロ / WINDING ROAD』",
     "slug": "172cbfb5-3198-809c-9329-f7a633a198f5",
     "date": "2025-04-30",
     "tags": [
@@ -459,7 +475,7 @@
       "自主制作音源"
     ],
     "category": null,
-    "description": "ゲストVo.招いてアルバム製作（M3-2024秋の頒布開始目標）",
+    "description": "オムニバスボーカルアルバム",
     "youtube": null,
     "niconico": null,
     "thumbnail": null,
@@ -564,14 +580,14 @@
   },
   {
     "id": "7b019218-bbd7-4367-b72e-c63561efb4d4",
-    "title": "イコライザ・トランキライザ（オルタナコンピ / .deadman records『Alter Era』）",
+    "title": ".deadman records『Alter Era』",
     "slug": "7b019218-bbd7-4367-b72e-c63561efb4d4",
     "date": "2024-11-23",
     "tags": [
       "コンピ参加"
     ],
     "category": null,
-    "description": "",
+    "description": "『イコライザ・トランキライザ』",
     "youtube": null,
     "niconico": null,
     "thumbnail": null,
@@ -612,7 +628,7 @@
   },
   {
     "id": "aacdbe91-4e2c-4972-a899-fe5d60835f8f",
-    "title": "[inst] Asukadogカバー：火炎",
+    "title": "Asukadog『女王蜂 / 火炎』",
     "slug": "aacdbe91-4e2c-4972-a899-fe5d60835f8f",
     "date": "2024-11-01",
     "tags": [
@@ -628,14 +644,14 @@
   },
   {
     "id": "ad14d19b-99fd-4e4f-ada9-041ac4f80802",
-    "title": "『ANTIBODY』RiCO秋M3-2024シングル",
+    "title": "RiCO『ANTIBODY』",
     "slug": "ad14d19b-99fd-4e4f-ada9-041ac4f80802",
     "date": "2024-10-27",
     "tags": [
       "ボーカル楽曲制作"
     ],
     "category": null,
-    "description": "",
+    "description": "秋M3-2024シングル",
     "youtube": null,
     "niconico": null,
     "thumbnail": null,
@@ -644,14 +660,14 @@
   },
   {
     "id": "9667705d-16ae-4b4b-a0a4-5b192d9b2d18",
-    "title": "Puca! Puca! Puca!（エレクトロスウィング投稿祭2024）",
+    "title": "Puca! Puca! Puca!",
     "slug": "9667705d-16ae-4b4b-a0a4-5b192d9b2d18",
     "date": "2024-10-25",
     "tags": [
       "個人リリース"
     ],
     "category": null,
-    "description": "",
+    "description": "エレクトロスウィング投稿祭2024",
     "youtube": null,
     "niconico": null,
     "thumbnail": null,
@@ -789,7 +805,7 @@
   },
   {
     "id": "e32b290c-493c-46dd-8ec3-8bed92cf1204",
-    "title": "眼高観察日記",
+    "title": "眼高観察日記 feat. 花隈千冬",
     "slug": "e32b290c-493c-46dd-8ec3-8bed92cf1204",
     "date": "2024-08-30",
     "tags": [
@@ -869,14 +885,14 @@
   },
   {
     "id": "0bc8dfc7-68e3-4f69-a6fc-5875fa8c7c5c",
-    "title": "『吟縒糸』VocaDuo2024 team:ノルニル",
+    "title": "吟縒糸",
     "slug": "0bc8dfc7-68e3-4f69-a6fc-5875fa8c7c5c",
     "date": "2024-07-01",
     "tags": [
       "個人リリース"
     ],
     "category": null,
-    "description": "",
+    "description": "VocaDuo2024 team: ノルニル",
     "youtube": null,
     "niconico": null,
     "thumbnail": null,
@@ -917,30 +933,30 @@
   },
   {
     "id": "7d94e65f-73c2-4076-aa76-901d7d811512",
-    "title": "『廃遊園地のメランコリア』VocaDuo2024 team:ナイトパレード",
+    "title": "廃遊園地のメランコリア",
     "slug": "7d94e65f-73c2-4076-aa76-901d7d811512",
     "date": "2024-07-01",
     "tags": [
       "個人リリース"
     ],
     "category": null,
-    "description": "",
-    "youtube": null,
+    "description": "VocaDuo2024 team: ナイトパレード",
+    "youtube": "https://youtu.be/O3PmnCzFDYM",
     "niconico": null,
-    "thumbnail": null,
+    "thumbnail": "https://img.youtube.com/vi/O3PmnCzFDYM/hqdefault.jpg",
     "createdAt": null,
     "updatedAt": null
   },
   {
     "id": "37c556d7-d90a-4d4b-a8d8-1d85f8c9f20b",
-    "title": "『イカロスと燐光』VocaDuo2024 team:KALEIDO",
+    "title": "イカロスと燐光",
     "slug": "37c556d7-d90a-4d4b-a8d8-1d85f8c9f20b",
     "date": "2024-07-01",
     "tags": [
       "個人リリース"
     ],
     "category": null,
-    "description": "",
+    "description": "VocaDuo2024 team: KALEIDO",
     "youtube": null,
     "niconico": null,
     "thumbnail": null,
@@ -949,14 +965,14 @@
   },
   {
     "id": "de980acb-43fe-4ff9-8b39-f38ff887cb47",
-    "title": "『未傑作』VocaDuo2024 team:Sin/D",
+    "title": "未傑作",
     "slug": "de980acb-43fe-4ff9-8b39-f38ff887cb47",
     "date": "2024-07-01",
     "tags": [
       "個人リリース"
     ],
     "category": null,
-    "description": "",
+    "description": "VocaDuo2024 team: Sin/D",
     "youtube": null,
     "niconico": null,
     "thumbnail": null,
@@ -965,17 +981,17 @@
   },
   {
     "id": "8ef922b0-1710-4410-8d01-3e6a8c60a0a4",
-    "title": "彼方遍く（キラハピ2024）",
+    "title": "彼方遍く feat. IA",
     "slug": "8ef922b0-1710-4410-8d01-3e6a8c60a0a4",
     "date": "2024-06-07",
     "tags": [
       "個人リリース"
     ],
     "category": null,
-    "description": "",
-    "youtube": null,
-    "niconico": null,
-    "thumbnail": null,
+    "description": "キラハピ2024参加作品",
+    "youtube": "https://youtu.be/qMP32yCQfy0",
+    "niconico": "https://www.nicovideo.jp/watch/sm43882778",
+    "thumbnail": "https://img.youtube.com/vi/qMP32yCQfy0/hqdefault.jpg",
     "createdAt": null,
     "updatedAt": null
   },
@@ -997,33 +1013,49 @@
   },
   {
     "id": "ed4d205d-16af-43ca-b40d-a9326081e300",
-    "title": "『初恋ピューレ』第五回歌詞統一祭",
+    "title": "初恋ピューレ feat. 奏兎める & 小春六花",
     "slug": "ed4d205d-16af-43ca-b40d-a9326081e300",
     "date": "2024-05-25",
     "tags": [
       "個人リリース"
     ],
     "category": null,
-    "description": "",
-    "youtube": null,
-    "niconico": null,
-    "thumbnail": null,
+    "description": "第五回歌詞統一祭 参加作品",
+    "youtube": "https://youtu.be/aZv4P9WmevI",
+    "niconico": "https://www.nicovideo.jp/watch/sm43829272",
+    "thumbnail": "https://img.youtube.com/vi/aZv4P9WmevI/hqdefault.jpg",
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "33bcbfb5-3198-8031-9ac7-d24b63ec9c58",
+    "title": "TEAL feat. IA",
+    "slug": "33bcbfb5-3198-8031-9ac7-d24b63ec9c58",
+    "date": "2024-05-12",
+    "tags": [
+      "個人リリース"
+    ],
+    "category": null,
+    "description": "提供楽曲の合成音声カバー版\n（Original: RiCO『TEAL』）",
+    "youtube": "https://youtu.be/TOG7eHWuumQ",
+    "niconico": "https://www.nicovideo.jp/watch/sm43778136",
+    "thumbnail": "https://img.youtube.com/vi/TOG7eHWuumQ/hqdefault.jpg",
     "createdAt": null,
     "updatedAt": null
   },
   {
     "id": "d0235f81-8406-49db-81d9-c7604eec2826",
-    "title": "Cutie×Cutee / 架空アニソン祭2024",
+    "title": "Cutie ✂︎ Cutee (TV size) feat. ハルリノ",
     "slug": "d0235f81-8406-49db-81d9-c7604eec2826",
     "date": "2024-05-04",
     "tags": [
       "個人リリース"
     ],
     "category": null,
-    "description": "",
-    "youtube": null,
-    "niconico": null,
-    "thumbnail": null,
+    "description": "架空アニソン祭2024 参加作品",
+    "youtube": "https://youtu.be/8rUZ2WSvl20",
+    "niconico": "https://www.nicovideo.jp/watch/sm43743138",
+    "thumbnail": "https://img.youtube.com/vi/8rUZ2WSvl20/hqdefault.jpg",
     "createdAt": null,
     "updatedAt": null
   },
@@ -1206,33 +1238,33 @@
   },
   {
     "id": "2447d32c-cf11-4936-b174-46d2b3583fc3",
-    "title": "すいみんとし",
+    "title": "すいみんとし feat. 杏戸ゆげβ 花奏かのんβ カゼヒキβ 花隈千冬",
     "slug": "2447d32c-cf11-4936-b174-46d2b3583fc3",
     "date": "2024-02-22",
     "tags": [
       "個人リリース"
     ],
     "category": null,
-    "description": "",
-    "youtube": null,
-    "niconico": null,
-    "thumbnail": null,
+    "description": "ボカコレ2024冬ルーキー 参加作品",
+    "youtube": "https://youtu.be/WrqaVew3pk0",
+    "niconico": "https://www.nicovideo.jp/watch/sm43388116",
+    "thumbnail": "https://img.youtube.com/vi/WrqaVew3pk0/hqdefault.jpg",
     "createdAt": null,
     "updatedAt": null
   },
   {
     "id": "5c28bf59-8f4d-4a1a-8ba8-3acfdd8d4738",
-    "title": "不在の座る椅子",
+    "title": "不在の座る椅子 feat. 花隈千冬",
     "slug": "5c28bf59-8f4d-4a1a-8ba8-3acfdd8d4738",
     "date": "2024-02-01",
     "tags": [
       "個人リリース"
     ],
     "category": null,
-    "description": "",
-    "youtube": null,
-    "niconico": null,
-    "thumbnail": null,
+    "description": "ボカロピアノ投稿祭2024 参加作品",
+    "youtube": "https://youtu.be/_qUzZ9EBqOs",
+    "niconico": "https://www.nicovideo.jp/watch/sm43334930",
+    "thumbnail": "https://img.youtube.com/vi/_qUzZ9EBqOs/hqdefault.jpg",
     "createdAt": null,
     "updatedAt": null
   },
@@ -1254,17 +1286,17 @@
   },
   {
     "id": "a676d291-2acb-48a9-9c18-799a1df54463",
-    "title": "一枚絵投稿祭",
+    "title": "シーロンス・フィニィ feat. 初音ミク",
     "slug": "a676d291-2acb-48a9-9c18-799a1df54463",
     "date": "2023-12-08",
     "tags": [
       "個人リリース"
     ],
     "category": null,
-    "description": "",
-    "youtube": null,
-    "niconico": null,
-    "thumbnail": null,
+    "description": "初音ミク16周年記念 1枚絵投稿祭 参加作品（最終ランキング99位）",
+    "youtube": "https://youtu.be/s_NqRlGZSZs",
+    "niconico": "https://www.nicovideo.jp/watch/sm43117403",
+    "thumbnail": "https://img.youtube.com/vi/s_NqRlGZSZs/hqdefault.jpg",
     "createdAt": null,
     "updatedAt": null
   },
@@ -1301,8 +1333,136 @@
     "updatedAt": null
   },
   {
+    "id": "33bcbfb5-3198-8087-a66d-c6940500bf71",
+    "title": "薔薇窓に朔 feat. RiCO & nononore",
+    "slug": "33bcbfb5-3198-8087-a66d-c6940500bf71",
+    "date": "2023-11-20",
+    "tags": [
+      "個人リリース"
+    ],
+    "category": null,
+    "description": "VOCAJAZZフェス2023 参加作品 [生歌歌唱版]",
+    "youtube": "https://youtu.be/WhgyPtHRBHI",
+    "niconico": "https://www.nicovideo.jp/watch/sm43049359",
+    "thumbnail": "https://img.youtube.com/vi/WhgyPtHRBHI/hqdefault.jpg",
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "882576a5-9dc6-4e05-a9d6-341beb61b491",
+    "title": "薔薇窓に朔 feat. Mai & Saki",
+    "slug": "882576a5-9dc6-4e05-a9d6-341beb61b491",
+    "date": "2023-11-18",
+    "tags": [
+      "個人リリース"
+    ],
+    "category": null,
+    "description": "VOCAJAZZフェス2023 参加作品 [合成音声版]",
+    "youtube": "https://youtu.be/DtLVCGocWow",
+    "niconico": "https://www.nicovideo.jp/watch/sm43037482",
+    "thumbnail": "https://img.youtube.com/vi/DtLVCGocWow/hqdefault.jpg",
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "867c2b6f-ce7a-4a77-8f02-11b50bd5552d",
+    "title": "曇り合う白 feat. 花隈千冬",
+    "slug": "867c2b6f-ce7a-4a77-8f02-11b50bd5552d",
+    "date": "2023-11-06",
+    "tags": [
+      "個人リリース"
+    ],
+    "category": null,
+    "description": "無色透名祭II 参加作品",
+    "youtube": "https://youtu.be/9EeIx_5KpfI",
+    "niconico": "https://www.nicovideo.jp/watch/sm42990012",
+    "thumbnail": "https://img.youtube.com/vi/9EeIx_5KpfI/hqdefault.jpg",
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "48c65f0a-9825-4207-a88e-712939e709dc",
+    "title": "朋 feat. じょん & RiCO",
+    "slug": "48c65f0a-9825-4207-a88e-712939e709dc",
+    "date": "2023-10-27",
+    "tags": [
+      "個人リリース"
+    ],
+    "category": null,
+    "description": "",
+    "youtube": "https://youtu.be/EPxSu7sN9fE",
+    "niconico": "https://www.nicovideo.jp/watch/sm42945566",
+    "thumbnail": "https://img.youtube.com/vi/EPxSu7sN9fE/hqdefault.jpg",
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "a24b4753-c095-455f-befb-e4fc2fd9e61f",
+    "title": "メビウスの裏 -The Second Cycle- feat. 知声",
+    "slug": "a24b4753-c095-455f-befb-e4fc2fd9e61f",
+    "date": "2023-10-08",
+    "tags": [
+      "個人リリース"
+    ],
+    "category": null,
+    "description": "ボカロ曲投稿開始1周年",
+    "youtube": "https://youtu.be/7WT8Cr7lv74",
+    "niconico": "https://www.nicovideo.jp/watch/sm42860121",
+    "thumbnail": "https://img.youtube.com/vi/7WT8Cr7lv74/hqdefault.jpg",
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0e126c50-f360-4e11-9d6c-69b788cf7970",
+    "title": "未完のタピスリ feat. 花隈千冬",
+    "slug": "0e126c50-f360-4e11-9d6c-69b788cf7970",
+    "date": "2023-09-23",
+    "tags": [
+      "個人リリース"
+    ],
+    "category": null,
+    "description": "民族調曲投稿祭 参加作品",
+    "youtube": "https://youtu.be/eG2Fw91ri0I",
+    "niconico": "https://www.nicovideo.jp/watch/sm42795895",
+    "thumbnail": "https://img.youtube.com/vi/eG2Fw91ri0I/hqdefault.jpg",
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "6d427b90-0740-49a7-83d4-55eabab339a8",
+    "title": "BBA feat. 夏色花梨",
+    "slug": "6d427b90-0740-49a7-83d4-55eabab339a8",
+    "date": "2023-09-16",
+    "tags": [
+      "個人リリース"
+    ],
+    "category": null,
+    "description": "病み曲投稿祭 参加作品",
+    "youtube": "https://youtu.be/FJPgFsveEBk",
+    "niconico": "https://www.nicovideo.jp/watch/sm42765939",
+    "thumbnail": "https://img.youtube.com/vi/FJPgFsveEBk/hqdefault.jpg",
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "4d3d555f-9eca-495a-a5f2-e2707219e8e5",
+    "title": "BATNA feat. Saki & 花隈千冬",
+    "slug": "4d3d555f-9eca-495a-a5f2-e2707219e8e5",
+    "date": "2023-08-04",
+    "tags": [
+      "個人リリース"
+    ],
+    "category": null,
+    "description": "ボカコレ2023夏ルーキー 参加作品",
+    "youtube": "https://youtu.be/f8-Nn30yodE",
+    "niconico": "https://www.nicovideo.jp/watch/sm42476790",
+    "thumbnail": "https://img.youtube.com/vi/f8-Nn30yodE/hqdefault.jpg",
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
     "id": "c9e30edb-868d-4cf5-b3cd-fe97db925fd6",
-    "title": "『絡る実』Full Cho.",
+    "title": "絡る実 feat. RiCO",
     "slug": "c9e30edb-868d-4cf5-b3cd-fe97db925fd6",
     "date": "2023-07-23",
     "tags": [
@@ -1310,9 +1470,9 @@
     ],
     "category": null,
     "description": "",
-    "youtube": null,
-    "niconico": null,
-    "thumbnail": null,
+    "youtube": "https://youtu.be/LY7x82ogQVg",
+    "niconico": "https://www.nicovideo.jp/watch/sm42535099",
+    "thumbnail": "https://img.youtube.com/vi/LY7x82ogQVg/hqdefault.jpg",
     "createdAt": null,
     "updatedAt": null
   },
@@ -1350,55 +1510,55 @@
   },
   {
     "id": "5e016331-69f3-4212-9680-f9ef0de33252",
-    "title": "ﾎﾞｶﾃﾞｭｵ｜ﾆﾆﾝさん",
+    "title": "燃ゆる花",
     "slug": "5e016331-69f3-4212-9680-f9ef0de33252",
     "date": "2023-07-01",
     "tags": [
       "個人リリース"
     ],
     "category": null,
-    "description": "ボカデュオ2023",
+    "description": "VocaDuo2023 team: 残夏の始末",
     "youtube": null,
-    "niconico": null,
+    "niconico": "https://www.nicovideo.jp/watch/sm42426101",
     "thumbnail": null,
     "createdAt": null,
     "updatedAt": null
   },
   {
     "id": "97b4f97f-2043-435e-8cac-2b9fc2dd1240",
-    "title": "ﾎﾞｶﾃﾞｭｵ｜D.D.N.P.",
+    "title": "D.D.N.P.",
     "slug": "97b4f97f-2043-435e-8cac-2b9fc2dd1240",
     "date": "2023-07-01",
     "tags": [
       "個人リリース"
     ],
     "category": null,
-    "description": "ボカデュオ2023",
-    "youtube": null,
-    "niconico": null,
-    "thumbnail": null,
+    "description": "VocaDuo2023 team: ナイトパレード",
+    "youtube": "https://youtu.be/OhVUf_oSND4",
+    "niconico": "https://www.nicovideo.jp/watch/sm42428602",
+    "thumbnail": "https://img.youtube.com/vi/OhVUf_oSND4/hqdefault.jpg",
     "createdAt": null,
     "updatedAt": null
   },
   {
     "id": "0f82ba5b-d7c7-4474-9701-58432d8649f5",
-    "title": "ﾎﾞｶﾃﾞｭｵ｜カナリアと止まり木",
+    "title": "となりのまほろば",
     "slug": "0f82ba5b-d7c7-4474-9701-58432d8649f5",
     "date": "2023-07-01",
     "tags": [
       "個人リリース"
     ],
     "category": null,
-    "description": "ボカデュオ2023",
-    "youtube": null,
-    "niconico": null,
-    "thumbnail": null,
+    "description": "VocaDuo2023 team: カナリアと止まり木",
+    "youtube": "https://youtu.be/cc-B3dcOkDE",
+    "niconico": "https://www.nicovideo.jp/watch/sm42418828",
+    "thumbnail": "https://img.youtube.com/vi/cc-B3dcOkDE/hqdefault.jpg",
     "createdAt": null,
     "updatedAt": null
   },
   {
     "id": "bb3aba40-2373-4bd6-b3b5-b421defdaa8b",
-    "title": "ふかみ祭",
+    "title": "水瓶 feat. Saki & 花隈千冬",
     "slug": "bb3aba40-2373-4bd6-b3b5-b421defdaa8b",
     "date": "2023-06-17",
     "tags": [
@@ -1406,25 +1566,41 @@
     ],
     "category": null,
     "description": "ふかみ祭",
-    "youtube": null,
-    "niconico": null,
-    "thumbnail": null,
+    "youtube": "https://youtu.be/rKfoyizIoys",
+    "niconico": "https://www.nicovideo.jp/watch/sm42361226",
+    "thumbnail": "https://img.youtube.com/vi/rKfoyizIoys/hqdefault.jpg",
     "createdAt": null,
     "updatedAt": null
   },
   {
     "id": "5160af0d-5aa2-45b8-904a-8ed53dd84554",
-    "title": "『絡る実』89sec Edit",
+    "title": "絡る実 (Short ver.) feat. RiCO",
     "slug": "5160af0d-5aa2-45b8-904a-8ed53dd84554",
     "date": "2023-06-10",
     "tags": [
       "個人リリース"
     ],
     "category": null,
-    "description": "架空アニソン祭（原案：MEHEM『リトルワンダー』）",
+    "description": "架空アニソン祭 参加作品\n（原案：MEHEM『リトルワンダー』）",
     "youtube": null,
-    "niconico": null,
+    "niconico": "https://www.nicovideo.jp/watch/sm42335181",
     "thumbnail": null,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "33bcbfb5-3198-808f-a35e-fe2894dfc261",
+    "title": "VIOLET feat. 花隈千冬",
+    "slug": "33bcbfb5-3198-808f-a35e-fe2894dfc261",
+    "date": "2023-04-22",
+    "tags": [
+      "個人リリース"
+    ],
+    "category": null,
+    "description": "",
+    "youtube": "https://youtu.be/7tUIFpWv56A",
+    "niconico": "https://www.nicovideo.jp/watch/sm42118797",
+    "thumbnail": "https://img.youtube.com/vi/7tUIFpWv56A/hqdefault.jpg",
     "createdAt": null,
     "updatedAt": null
   },

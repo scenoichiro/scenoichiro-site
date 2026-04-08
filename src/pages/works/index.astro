@@ -105,7 +105,7 @@ const allYears = [
         background: #f0eee9;
         border-radius: 12px;
         position: relative;
-        height: 158px;
+        aspect-ratio: 16 / 9;
         overflow: hidden;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -116,6 +116,7 @@ const allYears = [
         justify-content: flex-end;
         text-decoration: none;
         color: #222;
+        container-type: inline-size;
       }
 
       .card:hover {
@@ -125,9 +126,10 @@ const allYears = [
 
       .card.has-thumb {
         color: white;
-        background-color: #000;
-        background-size: cover;
+        background-color: #333;
+        background-size: 111%;
         background-repeat: no-repeat;
+        background-position: center center;
       }
 
       .card:not(.has-thumb) {
@@ -171,7 +173,7 @@ const allYears = [
       .card-header .date {
         margin-bottom: 0;
         color: rgba(255, 255, 255, 0.9);
-        font-size: 0.65rem;
+        font-size: clamp(0.65rem, 2cqw, 0.8rem);
         background: rgba(0, 0, 0, 0.5);
         padding: 2px 8px;
         border-radius: 4px;
@@ -193,7 +195,7 @@ const allYears = [
         background: rgba(255, 255, 255, 0.93);
         color: #666;
         padding: 4px 8px;
-        font-size: 0.625rem;
+        font-size: clamp(0.65rem, 2cqw, 0.8rem);
         font-weight: normal;
         border-radius: 4px;
         font-family: "Noto Sans JP", sans-serif;
@@ -223,7 +225,7 @@ const allYears = [
       }
 
       .card h2 {
-        font-size: 1rem;
+        font-size: clamp(0.9rem, 2.5cqw, 1.2rem);
         margin: 0;
         font-weight: 600;
         line-height: 1.4;

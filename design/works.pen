@@ -1,0 +1,1114 @@
+{
+  "version": "2.10",
+  "children": [
+    {
+      "type": "frame",
+      "id": "Nux2Y",
+      "x": 0,
+      "y": 0,
+      "name": "Works Page",
+      "clip": true,
+      "width": 1200,
+      "height": 1600,
+      "fill": "#F0EEE9",
+      "layout": "vertical",
+      "padding": [
+        0,
+        40
+      ],
+      "children": [
+        {
+          "type": "frame",
+          "id": "E5uLG",
+          "name": "Header",
+          "width": "fill_container",
+          "fill": "#F0EEE9",
+          "padding": 20,
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "g2hv1",
+              "name": "logo",
+              "rotation": 0.05175,
+              "fill": "#222222",
+              "content": "Sceno Ichiro",
+              "fontFamily": "Jost",
+              "fontSize": 24,
+              "fontWeight": "500",
+              "letterSpacing": 3.6
+            },
+            {
+              "type": "frame",
+              "id": "HgMEG",
+              "name": "Nav",
+              "gap": 20,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "wcYQm",
+                  "name": "nav1",
+                  "fill": "#222222",
+                  "content": "Home",
+                  "fontFamily": "Jost",
+                  "fontSize": 16,
+                  "fontWeight": "normal",
+                  "letterSpacing": 3.2
+                },
+                {
+                  "type": "text",
+                  "id": "neyNz",
+                  "name": "nav2",
+                  "fill": "#222222",
+                  "content": "Profile",
+                  "fontFamily": "Jost",
+                  "fontSize": 16,
+                  "fontWeight": "normal",
+                  "letterSpacing": 3.2
+                },
+                {
+                  "type": "text",
+                  "id": "J3IMo",
+                  "name": "nav3",
+                  "fill": "#222222",
+                  "content": "Works",
+                  "fontFamily": "Jost",
+                  "fontSize": 16,
+                  "fontWeight": "bold",
+                  "letterSpacing": 3.2
+                },
+                {
+                  "type": "text",
+                  "id": "UCR5f",
+                  "name": "nav4",
+                  "fill": "#222222",
+                  "content": "Contact",
+                  "fontFamily": "Jost",
+                  "fontSize": 16,
+                  "fontWeight": "normal",
+                  "letterSpacing": 3.2
+                },
+                {
+                  "type": "text",
+                  "id": "YrDGU",
+                  "name": "nav5",
+                  "fill": "#222222",
+                  "content": "Online Shop",
+                  "fontFamily": "Jost",
+                  "fontSize": 16,
+                  "fontWeight": "normal",
+                  "letterSpacing": 3.2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "95dIl",
+          "name": "Main",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 40,
+          "padding": [
+            40,
+            0
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "lnmFC",
+              "name": "title",
+              "fill": "#222222",
+              "content": "Works",
+              "fontFamily": "Jost",
+              "fontSize": 32,
+              "fontWeight": "500",
+              "letterSpacing": 4.8
+            },
+            {
+              "type": "frame",
+              "id": "o1DgB",
+              "name": "FilterSection",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 16,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "baiTm",
+                  "name": "YearRow",
+                  "gap": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "ovhw3",
+                      "name": "yearLabel",
+                      "fill": "#888888",
+                      "textGrowth": "fixed-width",
+                      "width": 76,
+                      "content": "YEAR",
+                      "fontFamily": "Jost",
+                      "fontSize": 12,
+                      "fontWeight": "normal",
+                      "letterSpacing": 2
+                    },
+                    {
+                      "type": "frame",
+                      "id": "PTFPk",
+                      "fill": "#222222",
+                      "cornerRadius": 20,
+                      "padding": [
+                        6,
+                        16
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "jMkxJ",
+                          "fill": "#FFFFFF",
+                          "content": "ALL",
+                          "fontFamily": "Jost",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "2cPvU",
+                      "cornerRadius": 20,
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "#222222"
+                      },
+                      "padding": [
+                        6,
+                        16
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "l1KZ0",
+                          "fill": "#222222",
+                          "content": "2026",
+                          "fontFamily": "Jost",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "W2jGM",
+                      "cornerRadius": 20,
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "#222222"
+                      },
+                      "padding": [
+                        6,
+                        16
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "c8lqT",
+                          "fill": "#222222",
+                          "content": "2025",
+                          "fontFamily": "Jost",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "dyc7H",
+                      "cornerRadius": 20,
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "#222222"
+                      },
+                      "padding": [
+                        6,
+                        16
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "64NMx",
+                          "fill": "#222222",
+                          "content": "2024",
+                          "fontFamily": "Jost",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "kOTFq",
+                      "cornerRadius": 20,
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "#222222"
+                      },
+                      "padding": [
+                        6,
+                        16
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "4pea2",
+                          "fill": "#222222",
+                          "content": "2023",
+                          "fontFamily": "Jost",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "3WhNs",
+                      "cornerRadius": 20,
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "#222222"
+                      },
+                      "padding": [
+                        6,
+                        16
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "4bFQa",
+                          "fill": "#222222",
+                          "content": "2022",
+                          "fontFamily": "Jost",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "jHH73",
+                  "name": "CategoryArea",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "ffmKI",
+                      "name": "CatLine1",
+                      "width": "fill_container",
+                      "gap": 12,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "Udxee",
+                          "fill": "#888888",
+                          "content": "CATEGORY",
+                          "fontFamily": "Jost",
+                          "fontSize": 12,
+                          "fontWeight": "normal",
+                          "letterSpacing": 2
+                        },
+                        {
+                          "type": "frame",
+                          "id": "kjmGO",
+                          "name": "CatRow1",
+                          "gap": 12,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "JafRj",
+                              "fill": "#222222",
+                              "cornerRadius": 20,
+                              "padding": [
+                                6,
+                                16
+                              ],
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "V6NCo",
+                                  "fill": "#FFFFFF",
+                                  "content": "ALL",
+                                  "fontFamily": "Jost",
+                                  "fontSize": 12,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "DZiuX",
+                              "cornerRadius": 20,
+                              "stroke": {
+                                "thickness": 1,
+                                "fill": "#222222"
+                              },
+                              "padding": [
+                                6,
+                                16
+                              ],
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "jRVnj",
+                                  "fill": "#222222",
+                                  "content": "ボーカル楽曲制作",
+                                  "fontFamily": "Jost",
+                                  "fontSize": 12,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "WjUp7",
+                              "cornerRadius": 20,
+                              "stroke": {
+                                "thickness": 1,
+                                "fill": "#222222"
+                              },
+                              "padding": [
+                                6,
+                                16
+                              ],
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "xvosv",
+                                  "fill": "#222222",
+                                  "content": "劇伴/BGM",
+                                  "fontFamily": "Jost",
+                                  "fontSize": 12,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "55DKk",
+                              "cornerRadius": 20,
+                              "stroke": {
+                                "thickness": 1,
+                                "fill": "#222222"
+                              },
+                              "padding": [
+                                6,
+                                16
+                              ],
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "QljLX",
+                                  "fill": "#222222",
+                                  "content": "カバーINST制作",
+                                  "fontFamily": "Jost",
+                                  "fontSize": 12,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "XbQmk",
+                              "cornerRadius": 20,
+                              "stroke": {
+                                "thickness": 1,
+                                "fill": "#222222"
+                              },
+                              "padding": [
+                                6,
+                                16
+                              ],
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "vagWQ",
+                                  "fill": "#222222",
+                                  "content": "Mix",
+                                  "fontFamily": "Jost",
+                                  "fontSize": 12,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "gS2wS",
+                      "name": "CatLine2",
+                      "width": "fill_container",
+                      "gap": 12,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "ZMisE",
+                          "width": 75,
+                          "height": "fit_content(0)"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "GeYgh",
+                          "name": "CatRow2",
+                          "gap": 12,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "wmq77",
+                              "cornerRadius": 20,
+                              "stroke": {
+                                "thickness": 1,
+                                "fill": "#222222"
+                              },
+                              "padding": [
+                                6,
+                                16
+                              ],
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "yjQFy",
+                                  "fill": "#222222",
+                                  "content": "Key.",
+                                  "fontFamily": "Jost",
+                                  "fontSize": 12,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "bEMoz",
+                              "cornerRadius": 20,
+                              "stroke": {
+                                "thickness": 1,
+                                "fill": "#222222"
+                              },
+                              "padding": [
+                                6,
+                                16
+                              ],
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "VyK6J",
+                                  "fill": "#222222",
+                                  "content": "コンピ参加",
+                                  "fontFamily": "Jost",
+                                  "fontSize": 12,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "FOhKh",
+                              "cornerRadius": 20,
+                              "stroke": {
+                                "thickness": 1,
+                                "fill": "#222222"
+                              },
+                              "padding": [
+                                6,
+                                16
+                              ],
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "amDOJ",
+                                  "fill": "#222222",
+                                  "content": "個人リリース",
+                                  "fontFamily": "Jost",
+                                  "fontSize": 12,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "oj6JD",
+                              "cornerRadius": 20,
+                              "stroke": {
+                                "thickness": 1,
+                                "fill": "#222222"
+                              },
+                              "padding": [
+                                6,
+                                16
+                              ],
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "ihg1O",
+                                  "fill": "#222222",
+                                  "content": "自主制作音源",
+                                  "fontFamily": "Jost",
+                                  "fontSize": 12,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "BjGzS",
+                              "cornerRadius": 20,
+                              "stroke": {
+                                "thickness": 1,
+                                "fill": "#222222"
+                              },
+                              "padding": [
+                                6,
+                                16
+                              ],
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "m8WEO",
+                                  "fill": "#222222",
+                                  "content": "イベント・ライブ",
+                                  "fontFamily": "Jost",
+                                  "fontSize": 12,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "zbays",
+                              "cornerRadius": 20,
+                              "stroke": {
+                                "thickness": 1,
+                                "fill": "#222222"
+                              },
+                              "padding": [
+                                6,
+                                16
+                              ],
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "cW6uz",
+                                  "fill": "#222222",
+                                  "content": "編曲",
+                                  "fontFamily": "Jost",
+                                  "fontSize": 12,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "CFuqY",
+              "name": "WorksGrid",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 32,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "z0fW1",
+                  "name": "CardRow",
+                  "width": "fill_container",
+                  "gap": 24,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "IVwGW",
+                      "name": "WorkCard",
+                      "clip": true,
+                      "width": 360,
+                      "height": 158,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "",
+                        "mode": "fill"
+                      },
+                      "cornerRadius": 8,
+                      "effect": {
+                        "type": "shadow",
+                        "shadowType": "outer",
+                        "color": "#0000000D",
+                        "offset": {
+                          "x": 0,
+                          "y": 2
+                        },
+                        "blur": 5
+                      },
+                      "layout": "vertical",
+                      "justifyContent": "end",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "AXmDX",
+                          "name": "CardOverlay",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#00000099",
+                          "layout": "vertical",
+                          "padding": 8,
+                          "justifyContent": "space_between",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "qYHx1",
+                              "name": "TopInfo",
+                              "width": "fill_container",
+                              "justifyContent": "space_between",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "SnlNK",
+                                  "name": "DateBadge",
+                                  "fill": "#00000066",
+                                  "cornerRadius": 4,
+                                  "padding": [
+                                    4,
+                                    8
+                                  ],
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "QUHvP",
+                                      "name": "date1",
+                                      "fill": "#FFFFFF",
+                                      "content": "2026.03.31",
+                                      "fontFamily": "Jost",
+                                      "fontSize": 10,
+                                      "fontWeight": "normal"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "MJVix",
+                                  "name": "Tags",
+                                  "gap": 8,
+                                  "children": [
+                                    {
+                                      "type": "frame",
+                                      "id": "NqusP",
+                                      "name": "tag1",
+                                      "fill": "#FFFFFFEE",
+                                      "cornerRadius": 4,
+                                      "padding": [
+                                        4,
+                                        8
+                                      ],
+                                      "children": [
+                                        {
+                                          "type": "text",
+                                          "id": "dMfiQ",
+                                          "name": "tag1Text",
+                                          "fill": "#666666",
+                                          "content": "ボーカル楽曲制作",
+                                          "fontFamily": "Noto Sans JP",
+                                          "fontSize": 10,
+                                          "fontWeight": "normal"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "96FFg",
+                              "name": "CardInfo",
+                              "width": "fill_container",
+                              "height": 114,
+                              "layout": "vertical",
+                              "gap": 4,
+                              "padding": 8,
+                              "justifyContent": "space_between",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "m5HMs",
+                                  "name": "title1",
+                                  "fill": "#FFFFFF",
+                                  "textGrowth": "fixed-width-height",
+                                  "width": 333,
+                                  "height": 56,
+                                  "content": "夜世生宵 『Haconië』(烏有様VRChatWorld向け) - 長尺タイトルテスト",
+                                  "fontFamily": "Jost",
+                                  "fontSize": 16,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "63kwr",
+                                  "name": "description1",
+                                  "fill": "#FFFFFFCC",
+                                  "textGrowth": "fixed-width",
+                                  "width": 333,
+                                  "content": "ここに作品の説明文が入ります。長尺タイトルの場合でも視認性を確保します。",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 12,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "4xRBV",
+                      "name": "WorkCard",
+                      "clip": true,
+                      "width": 360,
+                      "height": 158,
+                      "fill": "#FAFAFA",
+                      "cornerRadius": 8,
+                      "effect": {
+                        "type": "shadow",
+                        "shadowType": "outer",
+                        "color": "#0000000D",
+                        "offset": {
+                          "x": 0,
+                          "y": 2
+                        },
+                        "blur": 5
+                      },
+                      "layout": "vertical",
+                      "padding": 8,
+                      "justifyContent": "space_between",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "c4Jvf",
+                          "name": "TopInfo",
+                          "width": "fill_container",
+                          "justifyContent": "space_between",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "9bILP",
+                              "name": "DateBadge",
+                              "fill": "#EEEEEE",
+                              "cornerRadius": 4,
+                              "padding": [
+                                4,
+                                8
+                              ],
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "GVOm4",
+                                  "fill": "#666666",
+                                  "content": "2026.02.21",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 10,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "lXIgz",
+                              "name": "Tags",
+                              "gap": 8,
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "C6mzd",
+                                  "name": "tag2",
+                                  "fill": "#EEEEEE",
+                                  "cornerRadius": 4,
+                                  "padding": [
+                                    4,
+                                    8
+                                  ],
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "gzvKo",
+                                      "fill": "#666666",
+                                      "content": "劇伴/BGM",
+                                      "fontFamily": "Inter",
+                                      "fontSize": 10,
+                                      "fontWeight": "normal"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "TbxL4",
+                          "name": "CardInfo",
+                          "width": "fill_container",
+                          "height": 114,
+                          "layout": "vertical",
+                          "gap": 4,
+                          "padding": 8,
+                          "justifyContent": "space_between",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "yazBR",
+                              "name": "title2",
+                              "fill": "#222222",
+                              "textGrowth": "fixed-width-height",
+                              "width": 333,
+                              "height": 56,
+                              "content": "アントロギア feat. 小春六花",
+                              "fontFamily": "Jost",
+                              "fontSize": 16,
+                              "fontWeight": "600"
+                            },
+                            {
+                              "type": "text",
+                              "id": "88pEV",
+                              "name": "description2",
+                              "fill": "#666666",
+                              "textGrowth": "fixed-width-height",
+                              "width": 333,
+                              "height": 34,
+                              "content": "ここに作品の説明文が入ります。タイポグラフィと余白を Card 1 に合わせました。",
+                              "fontFamily": "Inter",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "xWTDd",
+                      "name": "WorkCard",
+                      "clip": true,
+                      "width": 360,
+                      "height": 158,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "",
+                        "mode": "fill"
+                      },
+                      "cornerRadius": 8,
+                      "effect": {
+                        "type": "shadow",
+                        "shadowType": "outer",
+                        "color": "#0000000D",
+                        "offset": {
+                          "x": 0,
+                          "y": 2
+                        },
+                        "blur": 5
+                      },
+                      "layout": "vertical",
+                      "justifyContent": "end",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "w2QeM",
+                          "name": "CardOverlay",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#00000099",
+                          "layout": "vertical",
+                          "padding": 8,
+                          "justifyContent": "space_between",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "VGoE2",
+                              "name": "TopInfo",
+                              "width": "fill_container",
+                              "justifyContent": "space_between",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "qy5nw",
+                                  "name": "DateBadge",
+                                  "fill": "#00000066",
+                                  "cornerRadius": 4,
+                                  "padding": [
+                                    4,
+                                    8
+                                  ],
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "TcvYy",
+                                      "name": "date2",
+                                      "fill": "#FFFFFF",
+                                      "content": "2026.02.21",
+                                      "fontFamily": "Jost",
+                                      "fontSize": 10,
+                                      "fontWeight": "normal"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "mbUYK",
+                                  "name": "Tags",
+                                  "gap": 8,
+                                  "children": [
+                                    {
+                                      "type": "frame",
+                                      "id": "9EZED",
+                                      "name": "tag2",
+                                      "fill": "#FFFFFFEE",
+                                      "cornerRadius": 4,
+                                      "padding": [
+                                        4,
+                                        8
+                                      ],
+                                      "children": [
+                                        {
+                                          "type": "text",
+                                          "id": "ltx2o",
+                                          "name": "tag2Text",
+                                          "fill": "#666666",
+                                          "content": "劇伴/BGM",
+                                          "fontFamily": "Noto Sans JP",
+                                          "fontSize": 10,
+                                          "fontWeight": "normal"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "frame",
+                                      "id": "eIFVn",
+                                      "name": "tag3",
+                                      "fill": "#F5F5F5",
+                                      "cornerRadius": 4,
+                                      "padding": [
+                                        4,
+                                        8
+                                      ],
+                                      "children": [
+                                        {
+                                          "type": "text",
+                                          "id": "mfIZk",
+                                          "name": "tag3Text",
+                                          "fill": "#666666",
+                                          "content": "Mix",
+                                          "fontFamily": "Noto Sans JP",
+                                          "fontSize": 10,
+                                          "fontWeight": "normal"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "L9pwp",
+                              "name": "CardInfo",
+                              "width": "fill_container",
+                              "height": 114,
+                              "layout": "vertical",
+                              "gap": 4,
+                              "padding": 8,
+                              "justifyContent": "space_between",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "Aq4pr",
+                                  "name": "title3",
+                                  "fill": "#FFFFFF",
+                                  "textGrowth": "fixed-width-height",
+                                  "width": 333,
+                                  "height": 56,
+                                  "content": "魔法少女性診断 BGM",
+                                  "fontFamily": "Jost",
+                                  "fontSize": 16,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "b77Se",
+                                  "name": "description3",
+                                  "fill": "#FFFFFFCC",
+                                  "textGrowth": "fixed-width-height",
+                                  "width": 333,
+                                  "height": 34,
+                                  "content": "ここに作品の説明文が入ります。作品の魅力を短く伝えます。",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 12,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "9q75F",
+          "name": "Footer",
+          "width": "fill_container",
+          "height": 100,
+          "layout": "vertical",
+          "padding": [
+            40,
+            0
+          ],
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "yJ7wo",
+              "name": "footerText",
+              "fill": "#222222",
+              "content": "© 2026 Sceno Ichiro",
+              "fontFamily": "Jost",
+              "fontSize": 12,
+              "fontWeight": "normal",
+              "letterSpacing": 4
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

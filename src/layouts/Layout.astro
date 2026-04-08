@@ -35,6 +35,43 @@ const { title = "Sceno Ichiro ｜ website" } = Astro.props;
 		  // JS実行開始を通知（チラつき防止）
 		  document.body.classList.add('js-ready');
 
+		  // スクロールインジケーター：クリックでコンテンツ開始位置へスクロール
+		  const scrollIndicator = document.getElementById('scroll-indicator');
+		  const contentStart = document.getElementById('content-start');
+		  const header = document.querySelector('.header-menu');
+		  
+		  if (scrollIndicator && contentStart) {
+		    scrollIndicator.addEventListener('click', () => {
+		      const headerHeight = header ? header.offsetHeight : 0;
+		      const targetPosition = contentStart.offsetTop - headerHeight;
+		      
+		      // スムーススクロールを手動実装（速度調整のため）
+		      const startPosition = window.scrollY;
+		      const distance = targetPosition - startPosition;
+		      const duration = 1200; // 1.2秒（デフォルトより遅め）
+		      let startTime = null;
+		      
+		      function animation(currentTime) {
+		        if (startTime === null) startTime = currentTime;
+		        const timeElapsed = currentTime - startTime;
+		        const progress = Math.min(timeElapsed / duration, 1);
+		        
+		        // イージング関数（ease-in-out）
+		        const ease = progress < 0.5
+		          ? 2 * progress * progress
+		          : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+		        
+		        window.scrollTo(0, startPosition + distance * ease);
+		        
+		        if (timeElapsed < duration) {
+		          requestAnimationFrame(animation);
+		        }
+		      }
+		      
+		      requestAnimationFrame(animation);
+		    });
+		  }
+
 		  // 右下アイコン：ページ末尾近くで表示、クリックでトップへ
 		  const fixedIcon = document.querySelector('.fixed-logo-icon');
 		  if (fixedIcon) {
