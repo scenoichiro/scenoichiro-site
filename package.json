@@ -9,7 +9,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "clear-cache": "rm -f src/data/projects-cache.json && echo '✅ Notion cache cleared!'"
   },
   "dependencies": {
     "@notionhq/client": "2.2.15",
