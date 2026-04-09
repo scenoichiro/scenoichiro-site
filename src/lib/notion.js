@@ -116,7 +116,7 @@ export async function getProjects() {
         description: props["説明"]?.rich_text?.map((t) => t.plain_text).join("") ?? "",
         youtube: props["YouTube"]?.url ?? null,
         niconico: props["NicoNico"]?.url ?? null,
-        thumbnail: getYouTubeThumbnail(youtube) ?? notionCover,
+        thumbnail: notionCover ?? getYouTubeThumbnail(youtube),
         createdAt: props["作成日"]?.created_time ?? null,
         updatedAt: props["更新日"]?.last_edited_time ?? null,
       };
