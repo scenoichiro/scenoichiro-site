@@ -4,19 +4,25 @@ import { getProjects } from '../lib/notion.js';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 
-// Worksの最新5件を取得
+// Worksの最新3件を取得
 const projects = await getProjects();
-const latestWorks = projects.slice(0, 5);
+const latestWorks = projects.slice(0, 3);
 
-// Newsの取得 (公開用の public/data/news.json を直接読み込む)
-let latestNews = [];
-try {
-  const newsPath = path.join(process.cwd(), 'public/data/news.json');
-  const newsData = await fs.readFile(newsPath, 'utf-8');
-  latestNews = JSON.parse(newsData).slice(0, 5);
-} catch (e) {
-  console.error("News data loading error", e);
-}
+// Latest Worksセクション用に特定の6作品を表示
+const featuredTitles = [
+  { title: 'キダムの組紐', exclude: null },
+  { title: 'nayuta『雪解百合』', exclude: null },
+  { title: '小純マアメ『まどろめる海』', exclude: null },
+  { title: 'IƧЯƎVƎЯ', exclude: '宮舞モカ' },
+  { title: 'kaorikid『Statice』', exclude: null },
+  { title: '水の中の彼女', exclude: null }
+];
+const latestNewsWorks = projects.filter(project => 
+  featuredTitles.some(item => 
+    project.title.includes(item.title) && 
+    (!item.exclude || !project.title.includes(item.exclude))
+  )
+).slice(0, 6);
 ---
 
 <Layout title="Sceno Ichiro ｜ website">
@@ -24,55 +30,100 @@ try {
     <div class="hero-image">
       <img src="/assets/portrait_header.png" alt="Sceno Ichiro" />
       <div class="hero-text">ワンシーンの<br />みえる音楽</div>
-      <div class="scroll-indicator" id="scroll-indicator">SCROLL ≫≫≫</div>
+      <div class="scroll-indicator" id="scroll-indicator">SCROLL ≫≫</div>
+    </div>
+    
+    <div class="transition-wrap">
+      <img src="/assets/transition;bg.png" alt="" class="transition-image" />
+      <div class="social-icons">
+        <a href="https://x.com/sceno_ichiro" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+          </svg>
+        </a>
+        <a href="https://www.youtube.com/@sceno_ichiro" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+          </svg>
+        </a>
+      </div>
     </div>
     
     <div class="top" id="content-start">
-      <iframe width="100%" height="700px" src="https://www.youtube.com/embed/62dkm3bogjI?si=SmWVMbPCLhLSEfZk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    
+      <!-- PROFILE SECTION -->
+      <section id="profile" class="portfolio-section">
+        <p class="section-label">Profile</p>
+        <h2 class="section-title">瀬乃一郎について</h2>
+
+        <p class="philosophy-quote">
+          感情の機微、繊細で緻密な世界観、そこに佇む温もりや湿度。<br>
+          あなたのイメージを音で表すような「ワンシーンのみえる音楽」を提供します。
+        </p>
+
+        <p class="body-text">
+          個人制作でのボカロ曲投稿を軸に、VSinger・Vtuberへのオリジナル楽曲提供、<br>
+          小演劇・映像作品の劇伴音楽やゲームBGMの制作など、幅広い分野で活動する作編曲家。<br>
+        </p>
+        <p class="body-text">
+          民族音楽・ジャズ・クラシカルといった音楽性を主軸にマルチジャンルで対応し、<br>
+          依頼者のアーティスティックなこだわりを音へ丁寧に翻訳することを大切に取り組んでいます。
+        </p>
+      </section>
+
+      <section>
+        <p class="section-label">Works</p>
+        <div class="works-grid">
+          {latestNewsWorks.map(item => (
+            <div 
+              class={`works-card ${item.thumbnail ? 'has-thumb' : ''}`}
+              style={item.thumbnail ? `background-image: url(${item.thumbnail})` : ''}
+            >
+              <div class="card-overlay"></div>
+              
+              <div class="card-header">
+                <div class="works-date">{item.date}</div>
+                <div class="works-tags">
+                  {item.tags.map(tag => (
+                    <span class="works-tag">{tag}</span>
+                  ))}
+                </div>
+              </div>
+
+              <div class="card-info">
+                <h3>{item.title}</h3>
+                {item.description && (
+                  <p class="works-description">{item.description}</p>
+                )}
+                <div class="works-links">
+                  {item.youtube && (
+                    <a href={item.youtube} target="_blank" rel="noopener noreferrer">YouTube</a>
+                  )}
+                  {item.niconico && (
+                    <a href={item.niconico} target="_blank" rel="noopener noreferrer">NicoNico</a>
+                  )}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div class="section-more">
+          <a href="/works/" class="more-button">MORE</a>
+        </div>
+      </section>
+
+      <section>
+      <p class="section-label">Contact</p>
+      <div class="form-container" style="max-width: 600px; margin: 0 auto; padding: 2rem 0;">
+        <script src="https://sdk.form.run/js/v2/embed.js" is:inline></script>
+        <div
+          class="formrun-embed"
+          data-formrun-form="@sceno-inquiry"
+          data-formrun-redirect="true"
+        >
+        </div>
+      </div>
+      </section>
     </div>
-    
-    <p>Under construction...</p>
-    
-    <section>
-      <h2>Latest Works</h2>
-      <div class="items-container">
-        {latestWorks.map(item => (
-          <div class="card">
-            <div class="title">{item.title}</div>
-            <div>
-              <span class="role">{item.role || ""}</span>
-              <span class="date">{item.date || ""}</span>
-            </div>
-            <div class="description">{item.description || ""}</div>
-            {item.youtube || item.niconico ? (
-              <div><a href={item.youtube || item.niconico} target="_blank">Link</a></div>
-            ) : null}
-          </div>
-        ))}
-      </div>
-    </section>
-
-    <section>
-      <h2>Latest News</h2>
-      <div class="items-container">
-        {latestNews.map(item => (
-          <div class="card">
-            <div class="title">{item.title}</div>
-            <div>
-              <span class="date">{item.date || ""}</span>
-            </div>
-            <div class="description">{item.description || ""}</div>
-            {item.link ? (
-              <div><a href={item.link} target="_blank">Link</a></div>
-            ) : null}
-          </div>
-        ))}
-      </div>
-    </section>
-
-    <section id="works">
-      <h2>Featured Work</h2>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=DN_ZuUlUSmIx6DX2&amp;list=PL9SNi_dneK2GULvhRLiaUhdq358HYG8zi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </section>
   </main>
 </Layout>
